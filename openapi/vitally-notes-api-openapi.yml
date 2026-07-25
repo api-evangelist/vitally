@@ -1,0 +1,212 @@
+openapi: 3.1.0
+info:
+  title: Vitally REST Accounts Notes API
+  version: '1.0'
+  x-generated: '2026-07-21'
+  x-method: generated
+  x-source: https://docs.vitally.io/en/articles/9880649-rest-api-overview and the per-resource REST API reference articles (accounts, users, tasks, organizations, notes, conversations, npsResponses, admins, customObjects). Operations, hosts, authentication, pagination and error semantics are taken verbatim from Vitally's published documentation; object schemas for Account, User and Task are transcribed from their documented object tables. Not a provider-published OpenAPI — a faithful generation from the public docs.
+  description: Vitally's public REST API for creating, updating, retrieving and listing the core Customer Success objects — Accounts, Organizations, Users, Tasks, Notes, Conversations and NPS Responses. Authentication is HTTP Basic using a Vitally REST API key as the username. List endpoints use cursor-based pagination ordered by updatedAt (default) or createdAt.
+  contact:
+    name: Vitally
+    url: https://docs.vitally.io/en/articles/9880649-rest-api-overview
+servers:
+- url: https://{subdomain}.rest.vitally.io/resources
+  description: US data center (default)
+  variables:
+    subdomain:
+      default: yoursubdomain
+      description: Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)
+- url: https://rest.vitally-eu.io/resources
+  description: EU data center
+security:
+- basicAuth: []
+tags:
+- name: Notes
+paths:
+  /notes:
+    get:
+      operationId: listNotes
+      tags:
+      - Notes
+      summary: List notes
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/from'
+      - $ref: '#/components/parameters/sortBy'
+      responses:
+        '200':
+          description: A page of notes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectList'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createNote
+      tags:
+      - Notes
+      summary: Create a note
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NoteWrite'
+      responses:
+        '200':
+          description: The created note
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /notes/{noteId}:
+    parameters:
+    - name: noteId
+      in: path
+      required: true
+      schema:
+        type: string
+    get:
+      operationId: getNote
+      tags:
+      - Notes
+      summary: Get a note
+      responses:
+        '200':
+          description: The note
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericObject'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    delete:
+      operationId: deleteNote
+      tags:
+      - Notes
+      summary: Delete a note
+      responses:
+        '204':
+          description: Deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    Cursor:
+      type: object
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          description: The cursor to use for the following page, or null at the end.
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Human-readable error message.
+      required:
+      - error
+    NoteWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        accountId:
+          type: string
+        organizationId:
+          type: string
+        note:
+          type: string
+          description: The body of the note; may include a restricted set of HTML tags.
+        tags:
+          type: array
+          items:
+            type: string
+        traits:
+          type: object
+          additionalProperties: true
+      required:
+      - note
+    GenericObject:
+      type: object
+      description: Common Vitally object envelope. Every REST object exposes id, createdAt, updatedAt, externalId, name and a traits map; resource-specific fields are documented per resource.
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        externalId:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        traits:
+          type: object
+          additionalProperties: true
+      additionalProperties: true
+    ObjectList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/GenericObject'
+  parameters:
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      description: Number of items to return. Max/default is 100.
+      schema:
+        type: integer
+        maximum: 100
+        default: 100
+    sortBy:
+      name: sortBy
+      in: query
+      description: How to order results. Default updatedAt.
+      schema:
+        type: string
+        enum:
+        - createdAt
+        - updatedAt
+        default: updatedAt
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad Request - the body of the request needs to be reviewed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: 'HTTP Basic authentication. Use your Vitally REST API key as the username with an empty password (Authorization: Basic base64(apiKey:)). Keys are created in the Vitally UI under Settings -> Integrations -> Vitally REST API.'
