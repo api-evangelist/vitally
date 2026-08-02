@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://docs.vitally.io/en/articles/9918977-automated-playbooks (Ping a
+  webhook playbook action), https://docs.vitally.io/en/articles/9778670-january-2023-releases
+  (Ping a Webhook added under Organization Actions)
+spec_type: Webhooks
+description: >-
+  Vitally's outbound event surface is playbook-driven webhooks: the Automated
+  Playbooks engine includes a "Ping a webhook" action that POSTs to a
+  user-configured URL whenever a playbook's rules match an Account,
+  Organization, or User (e.g. "Note Updated At is less than a day ago" fires
+  the webhook every time a note is updated). The January 2023 release added
+  the action under Organization Actions. Vitally publishes no AsyncAPI document
+  and no fixed webhook event catalog or payload schema — events are whatever
+  playbook triggers the customer configures, so this artifact records the
+  mechanism rather than a canonical event list.
+webhooks:
+  surface: automated-playbooks
+  action: Ping a webhook
+  direction: outbound
+  configuration:
+    url: user-configured per playbook action
+    trigger: playbook rules on Account, Organization, or User objects
+  event_catalog: >-
+    none published — any playbook rule (health score change, trait change,
+    activity recency, lifecycle transition, churn, etc.) can fire the webhook
+  payload_schema: not publicly documented
+  docs:
+    - https://docs.vitally.io/en/articles/9918977-automated-playbooks
+    - https://docs.vitally.io/en/articles/9778670-january-2023-releases
+notes: >-
+  No AsyncAPI exists to save verbatim; type Webhooks (not AsyncAPI) is the
+  honest pointer for this surface.

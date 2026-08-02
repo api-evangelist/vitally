@@ -1,0 +1,59 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.vitally.io/en/collections/10268628-release-notes
+docs: https://docs.vitally.io/en/collections/10268628-release-notes
+description: >-
+  Structured capture of Vitally's dated release notes. Vitally publishes
+  product-level release notes monthly in its Help Center (collections back to
+  2023); the REST API itself is unversioned (no version segment, header, or
+  dated API versions — see lifecycle/vitally-lifecycle.yml), so changes surface
+  through these monthly product notes. This artifact records the recent window;
+  the live collection is the source of truth.
+versioning:
+  scheme: monthly product release notes (API unversioned)
+  current: June 2026
+  detail: lifecycle/vitally-lifecycle.yml
+entries:
+  - version: 2026-06
+    date: '2026-06'
+    latest: true
+    url: https://docs.vitally.io/en/articles/15695179-june-release-notes
+    highlights:
+      - Task Templates
+      - AI Conversation Summaries
+      - Outlook Calendar
+  - version: 2026-05
+    date: '2026-05'
+    url: https://docs.vitally.io/en/articles/15261401-may-release-notes
+    highlights:
+      - Search in Views
+      - Multiple API Keys
+      - More Object Descriptions
+  - version: 2026-04
+    date: '2026-04'
+    url: https://docs.vitally.io/en/articles/14759259-april-release-notes
+    highlights:
+      - AI Copilot 2.0
+      - AI Memories
+      - Saved Prompts
+  - version: 2026-03
+    date: '2026-03'
+    url: https://docs.vitally.io/en/articles/14301456-march-release-notes
+    highlights:
+      - Cloning in Playbooks
+      - Autosaved Drafts
+      - Bulk Email Users
+  - version: 2026-02
+    date: '2026-02'
+    url: https://docs.vitally.io/en/articles/13833884-february-release-notes
+    highlights:
+      - Better Playbook Analytics
+      - Meeting Reporting
+      - Improved Search
+  - version: 2026-01
+    date: '2026-01'
+    url: https://docs.vitally.io/en/articles/13516057-january-release-notes
+    highlights:
+      - Improved AI Copilot
+      - Shareable Meetings
+      - Trait History

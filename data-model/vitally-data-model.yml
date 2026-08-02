@@ -1,0 +1,123 @@
+generated: '2026-07-21'
+method: derived
+source: >-
+  openapi/vitally-rest-openapi.yml and the Vitally REST API object reference
+  (accounts, users, tasks, organizations, notes, conversations, npsResponses,
+  admins, customObjects)
+description: >-
+  Entity-relationship graph for the Vitally Customer Success data model, derived
+  from the documented REST objects and their id-reference fields. Organizations
+  are the top of the hierarchy, Accounts belong to Organizations, Users associate
+  to Accounts/Organizations, and Activity objects (Tasks, Notes, Conversations,
+  NPS Responses) attach to Accounts. Admins are Vitally team members referenced
+  by ownership/assignment fields.
+entities:
+  - name: Organization
+    id_field: id
+    external_key: externalId
+    relationships:
+      - type: has_many
+        target: Account
+        via: organizationId
+  - name: Account
+    id_field: id
+    external_key: externalId
+    relationships:
+      - type: belongs_to
+        target: Organization
+        via: organizationId
+      - type: has_many
+        target: User
+        via: accountId
+      - type: has_many
+        target: Task
+        via: accountId
+      - type: has_one
+        target: Admin
+        via: accountOwnerId
+      - type: has_one
+        target: Admin
+        via: csmId
+      - type: has_one
+        target: Admin
+        via: accountExecutiveId
+      - type: has_many
+        target: Segment
+        via: segments
+  - name: User
+    id_field: id
+    external_key: externalId
+    relationships:
+      - type: has_many
+        target: Account
+        via: accounts
+      - type: has_many
+        target: Organization
+        via: organizations
+      - type: has_many
+        target: NpsResponse
+        via: userId
+  - name: Admin
+    id_field: id
+    description: Vitally team member.
+  - name: Task
+    id_field: id
+    external_key: externalId
+    relationships:
+      - type: belongs_to
+        target: Account
+        via: accountId
+      - type: belongs_to
+        target: Organization
+        via: organizationId
+      - type: has_one
+        target: Admin
+        via: assignedToId
+      - type: has_one
+        target: Admin
+        via: completedById
+      - type: has_one
+        target: TaskCategory
+        via: categoryId
+      - type: has_one
+        target: Meeting
+        via: meetingId
+      - type: has_many
+        target: Project
+        via: projects
+  - name: Note
+    id_field: id
+    external_key: externalId
+    relationships:
+      - type: belongs_to
+        target: Account
+        via: accountId
+  - name: Conversation
+    id_field: id
+    relationships:
+      - type: belongs_to
+        target: Account
+        via: accountId
+  - name: NpsResponse
+    id_field: id
+    relationships:
+      - type: belongs_to
+        target: User
+        via: userId
+  - name: CustomObject
+    id_field: id
+    external_key: externalId
+    relationships:
+      - type: belongs_to
+        target: Account
+        via: accountId
+  - name: Segment
+    id_field: id
+  - name: TaskCategory
+    id_field: id
+  - name: Project
+    id_field: id
+notes: >-
+  id values are Vitally-assigned UUIDs; externalId is the caller's own join key.
+  Traits (arbitrary key-value maps) hang off Accounts, Users and Tasks and carry
+  custom fields addressed by generated keys (e.g. vitally.custom.<name>).

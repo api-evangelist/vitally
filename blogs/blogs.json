@@ -1,0 +1,14 @@
+{
+  "repo": "vitally",
+  "feeds": [
+    {
+      "source": "https://docs.vitally.io/",
+      "feed_url": "https://docs.vitally.io/feed.xml",
+      "title": "",
+      "saved": 22,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 22,
+  "fetched": "2026-08-01T15:49:00Z"
+}

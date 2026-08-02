@@ -1,0 +1,52 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://docs.vitally.io/en/articles/9836612-installing-configuring-nps (Vitally.js
+  CDN install), npm registry search (registry.npmjs.org), PyPI, RubyGems probes
+description: >-
+  First-party and notable third-party client libraries for Vitally. Vitally's
+  only first-party client library is Vitally.js, a browser JavaScript library
+  served from Vitally's CDN that identifies users/accounts, sends product data,
+  and renders NPS / custom surveys in-app. Vitally publishes no packages on npm,
+  PyPI, RubyGems, Maven Central, NuGet, pkg.go.dev, Packagist, or crates.io —
+  the npm package name "vitally" is an empty placeholder with no versions. The
+  REST API is consumed directly over HTTP Basic auth.
+packages:
+  - language: javascript
+    registry: cdn
+    name: Vitally.js
+    url: https://cdn.vitally.io/vitally.js/v1/vitally.js
+    install: >-
+      Add the Vitally.js snippet to your application (loads
+      https://cdn.vitally.io/vitally.js/v1/vitally.js), then call
+      Vitally.user(), Vitally.account() / Vitally.organization(), and
+      Vitally.nps().
+    official: true
+    docs: https://docs.vitally.io/en/articles/9836612-installing-configuring-nps
+    notes: >-
+      Browser tracking + survey library: identifies users and accounts, sends
+      product events/traits to Vitally, and displays NPS and custom surveys
+      in-app.
+  - language: javascript
+    registry: npm
+    name: "@pipedream/vitally"
+    url: https://www.npmjs.com/package/@pipedream/vitally
+    install: npm install @pipedream/vitally
+    official: false
+    notes: Third-party Pipedream components wrapping the Vitally REST API.
+  - language: javascript
+    registry: npm
+    name: "@thoughtindustries/vitally"
+    url: https://www.npmjs.com/package/@thoughtindustries/vitally
+    install: npm install @thoughtindustries/vitally
+    official: false
+    notes: Third-party MCP server wrapping the Vitally customer success API.
+registries_searched:
+  - npm (no first-party package; "vitally" name is an empty placeholder)
+  - pypi (404)
+  - rubygems (404)
+  - maven-central (none found)
+  - nuget (none found)
+  - pkg.go.dev (none found)
+  - packagist (none found)
+  - crates.io (none found)

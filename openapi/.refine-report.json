@@ -1,0 +1,30 @@
+{
+  "provider": "vitally",
+  "sources": [
+    "vitally-accounts-api-openapi.yml",
+    "vitally-admins-api-openapi.yml",
+    "vitally-conversations-api-openapi.yml",
+    "vitally-custom-objects-api-openapi.yml",
+    "vitally-notes-api-openapi.yml",
+    "vitally-nps-responses-api-openapi.yml",
+    "vitally-organizations-api-openapi.yml",
+    "vitally-tasks-api-openapi.yml",
+    "vitally-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "vitally-accounts-api-openapi.yml",
+    "vitally-admins-api-openapi.yml",
+    "vitally-conversations-api-openapi.yml",
+    "vitally-custom-objects-api-openapi.yml",
+    "vitally-notes-api-openapi.yml",
+    "vitally-nps-responses-api-openapi.yml",
+    "vitally-organizations-api-openapi.yml",
+    "vitally-tasks-api-openapi.yml",
+    "vitally-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

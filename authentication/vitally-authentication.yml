@@ -1,0 +1,39 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.vitally.io/en/articles/9880649-rest-api-overview
+docs: https://docs.vitally.io/en/articles/9880649-rest-api-overview
+description: >-
+  Vitally's REST API authenticates with HTTP Basic authentication using a
+  Vitally REST API key as the username and an empty password. Keys are created
+  and managed in the Vitally UI under Settings -> Integrations -> Vitally REST
+  API, where each key has an editable name, a copyable secret token, a copyable
+  Basic Auth header, and per-key regenerate / revoke controls. Multiple keys can
+  coexist for different integrations or environments. The Vitally MCP server
+  authenticates separately with OAuth (see mcp/vitally-mcp.yml).
+summary:
+  types: [http]
+  http_schemes: [basic]
+  api_key_in: [header]
+  oauth2_flows: []
+schemes:
+  - name: basicAuth
+    type: http
+    scheme: basic
+    in: header
+    header: Authorization
+    format: 'Authorization: Basic base64(<api_key>:)'
+    description: >-
+      Basic auth with the REST API key as the username and an empty password.
+      The docs also show the pre-computed header form, e.g.
+      'Authorization: Basic c2VjcmV0X2tleTo='.
+    sources:
+      - openapi/vitally-rest-openapi.yml
+key_management:
+  location: 'Settings -> Integrations -> Vitally REST API (Quick Jump: Cmd/Alt + j)'
+  multiple_keys: true
+  rotation: Keys can be rolled (regenerated) or revoked individually.
+related:
+  mcp_oauth: mcp/vitally-mcp.yml
+  data_centers:
+    us: https://{subdomain}.rest.vitally.io
+    eu: https://rest.vitally-eu.io

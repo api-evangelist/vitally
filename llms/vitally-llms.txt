@@ -1,0 +1,108 @@
+# Vitally Help Center
+
+> Vitally Help Center
+
+## Getting Started
+
+- [Getting Started with Vitally as an Admin](https://docs.vitally.io/en/articles/11048953-getting-started-with-vitally-as-an-admin.md): Follow this learning path to get started as a Vitally Admin
+- [Getting Started with Vitally as a CSM](https://docs.vitally.io/en/articles/11049013-getting-started-with-vitally-as-a-csm.md): Follow this learning path to get started as a CSM in Vitally
+- [Getting Started with Vitally as a CS Leader](https://docs.vitally.io/en/articles/11049028-getting-started-with-vitally-as-a-cs-leader.md): Follow this learning path to get started as a CS leader in Vitally
+- [Integrate Data Sources](https://docs.vitally.io/en/articles/9812231-integrate-data-sources.md): First things first -- Let's get your data into Vitally!
+- [Sync: Organizations, Accounts, Users](https://docs.vitally.io/en/articles/9812234-sync-organizations-accounts-users.md): Organizations, Accounts and Users are the core data within Vitally
+- [Sync: Revenue](https://docs.vitally.io/en/articles/9812239-sync-revenue.md)
+- [Sync: Product Events](https://docs.vitally.io/en/articles/9812242-sync-product-events.md)
+- [Sync: Conversations, Notes & Tasks](https://docs.vitally.io/en/articles/9818242-sync-conversations-notes-tasks.md)
+- [Sync NPS](https://docs.vitally.io/en/articles/9818247-sync-nps.md)
+- [How to Navigate Vitally](https://docs.vitally.io/en/articles/9812194-how-to-navigate-vitally.md): Navigating Vitally with 'Quick Jump' and other Shortcuts
+- [Configure Data](https://docs.vitally.io/en/articles/9818249-configure-data.md): Configure your organization and the data you are syncing to Vitally to see only what you need!
+- [Engage with Customers](https://docs.vitally.io/en/articles/9818276-engage-with-customers.md): Build out how you will actively work with your customers
+- [Automate Your Process](https://docs.vitally.io/en/articles/9818467-automate-your-process.md): Tailor Vitally to your organization's processes and workflows!
+- [Visualize Your Data](https://docs.vitally.io/en/articles/9821885-visualize-your-data.md): Create a rich environment with cards and decks and contextualized customer Views such as table views, boards, dashboards, etc.
+- [Vitally Glossary](https://docs.vitally.io/en/articles/11564998-vitally-glossary.md): A quick-reference glossary of all Vitally features and terms—helping you navigate, understand, and use the platform with ease.
+- [Blueprints](https://docs.vitally.io/en/articles/12610210-blueprints.md): Ready-to-use templates powered by Customer Success experts
+- [Hierarchy at Vitally](https://docs.vitally.io/en/articles/12805086-hierarchy-at-vitally.md): A quick guide on understanding how Vitally's hierarchy works.
+- [Learning Vitally](https://docs.vitally.io/en/articles/14054169-learning-vitally.md): Resources to help you learn how to configure and use Vitally to support your CS strategies.
+
+## Integrations
+
+- [Integrations Overview](https://docs.vitally.io/en/articles/9822162-integrations-overview.md)
+- [The significance of 'external ID'](https://docs.vitally.io/en/articles/9822155-the-significance-of-external-id.md): Accurately tie customer data from one tool with another.
+- [Product Events in Vitally: Timestamped Events vs. Aggregate Traits](https://docs.vitally.io/en/articles/14294879-product-events-in-vitally-timestamped-events-vs-aggregate-traits.md): Understand how customers use your product and turn that insight into smarter CS strategies
+
+## Customer Lifecycle
+
+- [Custom Objects](https://docs.vitally.io/en/articles/9901263-custom-objects.md): Custom objects allow you to store additional data in a scalable manner and link that to an account and organization.
+
+## Health Scores & Metrics
+
+- [Default Metrics](https://docs.vitally.io/en/articles/9901274-default-metrics.md): An overview of the out-of-the-box metrics Vitally provides for your Customers
+- [Health scores](https://docs.vitally.io/en/articles/9901284-health-scores.md): Vitally's health scores strike the perfect balance between simplicity & power 💪
+- [Success Metrics](https://docs.vitally.io/en/articles/9907816-success-metrics.md): Success Metrics are custom KPIs defined using the data you feed into Vitally and calculated for each of your accounts.
+- [Elements](https://docs.vitally.io/en/articles/9913994-elements.md): Elements help you understand how customers have configured your product, so you can ensure each implementation is setup for success.
+- [Traits](https://docs.vitally.io/en/articles/9913997-traits.md): Traits are pieces of information about a customer, like their plan, number of licenses, name, etc.
+- [Formula Traits](https://docs.vitally.io/en/articles/9976608-formula-traits.md): Build custom formulas on various objects.
+
+## Reporting & Segmentation
+
+- [Hubs](https://docs.vitally.io/en/articles/9822090-hubs.md): It all starts with Hubs! Hubs are dedicated workspaces tailored specifically to the work you care about.
+- [Dashboards](https://docs.vitally.io/en/articles/9914004-dashboards.md)
+- [Segmentation \(Segments\)](https://docs.vitally.io/en/articles/9914219-segmentation-segments.md): Auto-organize your accounts into any number of segments, using any data points.
+- [Table Views](https://docs.vitally.io/en/articles/9914244-table-views.md): Views help you and your team to easily revisit specific data points about your objects \(Accounts, Users, Conversations, Custom Objects, etc\)
+- [Board Views](https://docs.vitally.io/en/articles/9914252-board-views.md): Kanban-style boards used to visualize data in a workflow structure
+- [Calendar View](https://docs.vitally.io/en/articles/10478762-calendar-view.md): Visualize objects with calendar views in Vitally's Customer 360s and Hubs.
+- [Product Event History](https://docs.vitally.io/en/articles/9914261-product-event-history.md): Analyze the historical events sent by your users and accounts
+- [Customer 360](https://docs.vitally.io/en/articles/9967873-customer-360.md): Allows users to customize all information about their customers while surfacing the most critical and important information for each viewer.
+
+## Automated Playbooks & Alerts
+
+- [Automated Playbooks](https://docs.vitally.io/en/articles/9918977-automated-playbooks.md): Playbook automation help you automate internal customer management, fire alerts for in-need accounts, and engage customers.
+- [Creating Opportunity & Risk Indicators](https://docs.vitally.io/en/articles/9919032-creating-opportunity-risk-indicators.md): Automated alerts that detect significant opportunity or risk states customers may transition in to during their lifetime with your product.
+- [Automated Playbook Use Cases, Tips, & Tricks](https://docs.vitally.io/en/articles/10087796-automated-playbook-use-cases-tips-tricks.md): Find common playbook use cases, tips, and tricks!
+- [Triggering Intercom Campaigns & Pre-saved Emails from Vitally](https://docs.vitally.io/en/articles/9847090-triggering-intercom-campaigns-pre-saved-emails-from-vitally.md)
+
+## Activity Items
+
+- [Notes](https://docs.vitally.io/en/articles/9919048-notes.md): Document important notes and ongoings for your accounts
+- [Tasks](https://docs.vitally.io/en/articles/9919241-tasks.md): Vitally can be used as a powerful task management system for helping guide day-to-day priorities for your team.
+- [Conversations](https://docs.vitally.io/en/articles/9919275-conversations.md): View and start conversations with your accounts directly within Vitally
+- [Projects](https://docs.vitally.io/en/articles/9922942-projects.md): Manage your customer projects where you manage your customers.
+- [Docs](https://docs.vitally.io/en/articles/9922959-docs.md): A dedicated workspace to gather and share information.
+- [Categories & Tags](https://docs.vitally.io/en/articles/9924217-categories-tags.md): Categories and Tags help you organize your activity items in Vitally, and give you some power alongside account views & playbook automations
+- [Meetings](https://docs.vitally.io/en/articles/10006959-meetings.md): Sync Google Calendar or Outlook Calendar events to Vitally as activity objects.
+- [How Can I Report on Conversations Started from Playbooks?](https://docs.vitally.io/en/articles/11833006-how-can-i-report-on-conversations-started-from-playbooks.md): This article walks you though filtering and reporting options for conversations that were started via automated Playbook actions.
+- [How does Vitally handle meeting associations, including participant adjustments and external integrations?](https://docs.vitally.io/en/articles/11842915-how-does-vitally-handle-meeting-associations-including-participant-adjustments-and-external-integrations.md)
+- [Vitally Email Service](https://docs.vitally.io/en/articles/12020635-vitally-email-service.md): Send emails at scale using your own domain
+
+## NPS & Custom surveys
+
+- [Vitally's NPS Surveys & Analytics](https://docs.vitally.io/en/articles/9836607-vitally-s-nps-surveys-analytics.md): An overview of the capabilities and analytics Vitally's NPS add-on provides
+- [Installing & configuring NPS](https://docs.vitally.io/en/articles/9836612-installing-configuring-nps.md): An overview of how to install Vitally's NPS and ensure the right users are polled at the right time
+- [Custom Surveys](https://docs.vitally.io/en/articles/9836628-custom-surveys.md): Design and create surveys with customizable questions and question types.
+
+## Administration
+
+- [Managing Your Organization](https://docs.vitally.io/en/articles/9831836-managing-your-organization.md): Manage your payment, seats, and more.
+- [Updating Email Domains for Internal Users](https://docs.vitally.io/en/articles/10698817-updating-email-domains-for-internal-users.md): The process of managing team members and updating email domains in Vitally, whether you use Single Sign-On \(SSO\) or not.
+- [User Roles & Permissions](https://docs.vitally.io/en/articles/9831842-user-roles-permissions.md): A breakdown of the permissions for each of the Vitally User Roles: Admin, Leader, Team Member, and Observer
+- [Assigning \(user\) Owners to Accounts](https://docs.vitally.io/en/articles/9836585-assigning-user-owners-to-accounts.md): Learn how to identify which user at the account owns the buying decision
+- [Assigning Key Roles](https://docs.vitally.io/en/articles/9836588-assigning-key-roles.md): Assign a CSM, AE, Implementation Specialist, and any additional roles that need to be tracked, to be responsible for an account.
+- [Changing the currency for your revenue \(your 'home currency'\)](https://docs.vitally.io/en/articles/9836590-changing-the-currency-for-your-revenue-your-home-currency.md): Ensure currency is reported in the unit you use
+- [Removing Hierarchy Associations](https://docs.vitally.io/en/articles/9836601-removing-hierarchy-associations.md): Manually remove Users from Accounts or Accounts from Organizations.
+- [Data Access](https://docs.vitally.io/en/articles/9977216-data-access.md): Restrict or grant access to specific Organizations or Accounts for certain team members
+
+## Privacy & Security
+
+- [Security Questions](https://docs.vitally.io/en/articles/9715111-security-questions.md)
+- [Two-Factor Authentication \(2FA\)](https://docs.vitally.io/en/articles/9825682-two-factor-authentication-2fa.md): Add a second layer of security to your Vitally profile by setting up Two-Factor Authentication
+- [GDPR Compliance](https://docs.vitally.io/en/articles/9825718-gdpr-compliance.md)
+- [Deactivating your Vitally Profile or Account](https://docs.vitally.io/en/articles/9825896-deactivating-your-vitally-profile-or-account.md): How to cancel Vitally or deactivate a specific internal user in Settings.
+
+## Vitally AI
+
+- [AI Summaries](https://docs.vitally.io/en/articles/11404214-ai-summaries.md): Analyze sentiment, identify key concerns, assess customers for churn likelihood, and highlight growth opportunities.
+- [AI Copilot](https://docs.vitally.io/en/articles/11655139-ai-copilot.md): Your personal AI assistant to surface insights and improve productivity.
+- [AI Meeting Recorder](https://docs.vitally.io/en/articles/12089240-ai-meeting-recorder.md): Bring call recordings and transcripts into Vitally!
+- [Vitally AI+](https://docs.vitally.io/en/articles/12333843-vitally-ai.md): Unlock advanced AI-powered features designed to help teams drive efficiency, improve insights, and enhance collaboration
+- [AI Memories](https://docs.vitally.io/en/articles/14289728-ai-memories.md): Save persistent context once and let Vitally AI use it automatically — no re-explaining required.
+- [Vitally AI Copilot Prompt Library](https://docs.vitally.io/en/articles/15182429-vitally-ai-copilot-prompt-library.md): A collection of prompt examples to use in AI Copilot
+- [Vitally MCP Server \[Beta\]](https://docs.vitally.io/en/articles/15862100-vitally-mcp-server-beta.md): How to connect an MCP-compatible AI tool to your Vitally workspace, what you can ask it to do, and how permissions work.

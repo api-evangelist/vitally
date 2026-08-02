@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://docs.vitally.io/en/articles/9880649-rest-api-overview,
+  https://www.vitally.io/security, https://vitally.statuspage.io
+description: >-
+  Versioning, status and operational-transparency posture for the Vitally APIs.
+  The public REST API is served under an unversioned /resources path; the HTTPS
+  Analytics ingestion API is versioned under /analytics/v1. Vitally runs a public
+  Atlassian Statuspage. No RFC 8594 Sunset/Deprecation header contract or numeric
+  public SLA was found in the documentation.
+versioning:
+  rest_api:
+    scheme: unversioned-path
+    base: /resources
+  analytics_api:
+    scheme: uri-path
+    current: v1
+    base: /analytics/v1
+  docs: https://docs.vitally.io/en/articles/9880649-rest-api-overview
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: >-
+    No public deprecation policy or RFC 8594 Sunset/Deprecation header support
+    was found in the REST API documentation. The Vitally MCP server is
+    explicitly labelled Beta with the note that behavior may change.
+sla:
+  url: https://www.vitally.io/security
+  public_uptime_target: null
+  notes: >-
+    Availability is monitored 24/7 with an incident-response team; no numeric
+    public uptime SLA is published.
+status_page: https://vitally.statuspage.io
+deprecated_operations: []

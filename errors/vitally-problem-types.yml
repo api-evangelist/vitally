@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.vitally.io/en/articles/9880649-rest-api-overview
+format: custom
+envelope: '{ "error": "<message>" }'
+description: >-
+  Vitally's REST API returns errors as a flat JSON object with a single "error"
+  string field (not RFC 9457 problem+json). The documented status codes are
+  captured below; the 401 body was also verified live against
+  https://rest.vitally.io/resources/accounts, which returns
+  {"error":"Authorization header not present."}.
+problems:
+  - status: 400
+    title: Bad Request
+    meaning: The body of the request needs to be reviewed (malformed or invalid payload).
+    action: Correct the request body and retry.
+  - status: 401
+    title: Unauthorized
+    meaning: >-
+      There is an issue with the authorization used (secret token / Basic Auth
+      header missing or invalid).
+    action: Provide a valid Authorization Basic header using an active REST API key.
+    observed_body: '{"error":"Authorization header not present."}'
+  - status: 429
+    title: Too Many Requests
+    meaning: >-
+      Too many requests within the allotted timeframe (over the default
+      1000 requests/min budget).
+    action: >-
+      Back off using the RateLimit-Reset header; reduce request rate or batch
+      writes.
+    related: rate-limits/vitally-rate-limits.yml

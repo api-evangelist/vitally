@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  https://www.vitally.io/security, https://docs.vitally.io/en/articles/9825718-gdpr-compliance,
+  https://docs.vitally.io/en/articles/9880649-rest-api-overview
+description: >-
+  Standards and compliance posture for Vitally. Compliance certifications are
+  published on the security page; cross-cutting API standards are derived from
+  the documented REST API behavior.
+compliance_programs:
+  - id: soc2-type2
+    name: SOC 2 (Type 2)
+    conforms: true
+    evidence: https://www.vitally.io/security — "Certified to responsibly secure, monitor, and process your data"; report available on request via privacy@vitally.io
+  - id: gdpr
+    name: GDPR
+    conforms: true
+    evidence: https://www.vitally.io/security and https://docs.vitally.io/en/articles/9825718-gdpr-compliance
+  - id: pci-dss
+    name: PCI DSS (via Stripe)
+    conforms: true
+    evidence: Payments handled by Stripe as a third-party processor; Vitally does not store card data directly.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: The Vitally MCP server authenticates via OAuth (mcp/vitally-mcp.yml).
+  - id: http-basic-auth
+    conforms: true
+    evidence: REST API uses HTTP Basic auth (RFC 7617) with the API key as username.
+  - id: cursor-pagination
+    conforms: true
+    evidence: All list endpoints use cursor-based pagination (limit/from/next).
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      Errors use a custom '{ "error": "..." }' envelope, not
+      application/problem+json.
+  - id: rfc8594-sunset-header
+    conforms: false
+    evidence: No Sunset/Deprecation header contract documented.
+  - id: mcp
+    conforms: true
+    evidence: Official remote MCP server at https://mcp.vitally.io/mcp/v0 (Beta).

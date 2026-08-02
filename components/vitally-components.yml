@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.vitally.io/en/articles/9836612-installing-configuring-nps
+description: >-
+  Vitally's client-side embeddable surface: in-app NPS and custom survey
+  widgets rendered inside the customer's own product by Vitally.js. There is no
+  separate web-component/element library — the survey renders directly in-app
+  when triggered through the Vitally.js API after the logged-in user has been
+  identified. Captured from the published NPS install docs; distinct from
+  server-side SDKs (see packages/vitally-packages.yml).
+loader:
+  library: Vitally.js
+  script: https://cdn.vitally.io/vitally.js/v1/vitally.js
+  identification_required:
+    - Vitally.user()
+    - Vitally.account() or Vitally.organization()
+components:
+  - family: NPS & Custom Surveys
+    name: In-app NPS survey widget
+    render: in-app overlay rendered by Vitally.js
+    api:
+      - call: Vitally.nps('survey')
+        purpose: show the survey only when configured criteria are met (production)
+      - call: Vitally.nps('show')
+        purpose: force-display the survey, bypassing configuration (testing only)
+      - call: Vitally.nps('test')
+        purpose: force-display without recording responses (testing only)
+    options:
+      - productName
+      - delay
+      - primaryColor
+      - custom text fields
+    docs: https://docs.vitally.io/en/articles/9836612-installing-configuring-nps

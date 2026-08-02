@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+description: >-
+  Probe of the /.well-known/ discovery surface across Vitally's public hosts.
+  None of the standard discovery documents are published (all 404). Recorded for
+  auditability; no WellKnown catalog pointer is emitted because nothing was found.
+hosts_probed:
+  - https://rest.vitally.io
+  - https://api.vitally.io
+  - https://vitally.io
+  - https://www.vitally.io
+  - https://docs.vitally.io
+documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+notes: >-
+  The Vitally MCP server uses OAuth but does not expose a public
+  /.well-known/oauth-authorization-server on the probed hosts (the flow uses
+  dynamic client registration initiated by the MCP client at mcp.vitally.io).

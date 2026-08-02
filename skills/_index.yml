@@ -1,0 +1,21 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/vitally-rest-openapi.yml + conventions/vitally-conventions.yml + errors/vitally-problem-types.yml
+description: >-
+  Packaged Agent Skills for the Vitally REST API. Each skill grounds an agent in
+  a real marquee Customer Success flow using operationIds that exist verbatim in
+  openapi/vitally-rest-openapi.yml, plus the auth / pagination / rate-limit /
+  error rules captured in the conventions and error artifacts.
+skills:
+  - file: vitally-sync-account-and-users.md
+    name: Sync an account and its users
+    api: openapi/vitally-rest-openapi.yml
+    operations: [createAccount, updateAccount, createUser, listUsersForAccount]
+  - file: vitally-log-followup-task.md
+    name: Log a follow-up task on an account
+    api: openapi/vitally-rest-openapi.yml
+    operations: [listAccounts, getAccount, listAdmins, createTask]
+  - file: vitally-find-at-risk-accounts.md
+    name: Find at-risk accounts and summarize activity
+    api: openapi/vitally-rest-openapi.yml
+    operations: [listAccounts, listUsersForAccount, listNpsResponses, listNotes]

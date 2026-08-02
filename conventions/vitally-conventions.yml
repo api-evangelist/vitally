@@ -1,0 +1,109 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.vitally.io/en/articles/9880649-rest-api-overview
+description: >-
+  Cross-cutting request/response conventions for the Vitally REST API — the
+  behavior that applies across every endpoint rather than any single operation:
+  authentication style, pagination, sorting, rate-limit signaling, the error
+  envelope, HTML field handling, and multi-region hosting. Sourced from Vitally's
+  REST API overview and per-resource reference docs.
+
+base_url: https://{subdomain}.rest.vitally.io/resources
+api_style: REST over HTTPS, JSON request and response bodies
+
+data_centers:
+  us:
+    host: https://{subdomain}.rest.vitally.io
+    note: Default. {subdomain} is your Vitally login subdomain.
+  eu:
+    host: https://rest.vitally-eu.io
+    note: EU data center; single shared host (no subdomain).
+
+authentication:
+  scheme: HTTP Basic (REST API key as username, empty password)
+  header: Authorization
+  docs: https://docs.vitally.io/en/articles/9880649-rest-api-overview
+  detail: authentication/vitally-authentication.yml
+
+idempotency:
+  supported: false
+  notes: >-
+    Vitally's REST API does not document an idempotency-key mechanism. Writes are
+    keyed to your externalId where applicable — creating/updating with a known
+    externalId upserts the record — which provides a natural dedupe path, but
+    there is no Idempotency-Key header contract.
+
+pagination:
+  style: cursor
+  ordered_by: updatedAt (default) or createdAt
+  request_params:
+    limit: 1-100, max/default 100
+    from: cursor string returned by the previous response's next field
+    sortBy: '"createdAt" | "updatedAt" (default "updatedAt")'
+  response_fields:
+    results: array of items for that endpoint
+    next: cursor string for the following page, or null at the end
+  notes: >-
+    Setting sortBy=createdAt is recommended for frequently-updated data so a full
+    list is returned each pass. List sort is descending.
+  docs: https://docs.vitally.io/en/articles/9880649-rest-api-overview
+
+external_id:
+  supported: true
+  description: >-
+    Most objects accept your own externalId to tie Vitally records to your
+    source system; it is the join key for upsert-style writes.
+  docs: https://docs.vitally.io/en/articles/9822155-the-significance-of-external-id
+
+parent_object_inlining:
+  supported: true
+  description: >-
+    REST Activity Object requests return parent object details in the payload —
+    e.g. GET a Task also returns the associated Account information.
+
+metadata:
+  supported: true
+  mechanism: traits
+  description: >-
+    Objects carry a traits map of arbitrary key-value pairs; custom traits are
+    defined in the Vitally UI and addressed by their generated key
+    (e.g. vitally.custom.<name>). Setting a trait to null deletes it; omitting a
+    trait leaves it unchanged.
+
+html_fields:
+  supported: true
+  applies_to: [Notes, Tasks]
+  allowed_tags: [a, img, p, div, br, ul, ol, nl, li, b, u, i, strong, em, code]
+  allowed_attributes:
+    a: [href, name, target]
+    img: [src, alt, width, height]
+  notes: Tags/attributes outside the allow list are stripped on create/update.
+
+rate_limit_signaling:
+  supported: true
+  default_limit: 1000 requests / minute (token bucket)
+  write_cost: Write requests (POST/PUT/PATCH/DELETE) may count as more than one unit.
+  response_headers:
+    RateLimit-Limit: 'e.g. "1000, 1000;window=60"'
+    RateLimit-Remaining: units of budget remaining
+    RateLimit-Reset: seconds until one unit of budget refills
+  detail: rate-limits/vitally-rate-limits.yml
+
+error_envelope:
+  shape: '{ "error": "<message>" }'
+  format: custom (not RFC 9457 problem+json)
+  detail: errors/vitally-problem-types.yml
+
+versioning:
+  scheme: unversioned path (/resources/*)
+  notes: >-
+    The public REST API is served under an unversioned /resources path; the
+    separate HTTPS Analytics ingestion API is versioned under /analytics/v1.
+  detail: lifecycle/vitally-lifecycle.yml
+
+bulk_operations:
+  supported: true
+  description: >-
+    Bulk POST / PUT / DELETE are supported and documented via Postman runner
+    recipes.
+  docs: https://docs.vitally.io/en/articles/13146095-rest-api-bulk-post-requests-through-postman

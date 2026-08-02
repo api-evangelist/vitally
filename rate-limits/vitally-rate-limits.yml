@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.vitally.io/en/articles/9880649-rest-api-overview
+description: >-
+  Vitally REST API rate limiting. A token-bucket budget of 1000 requests per
+  minute by default; write requests (POST/PUT/PATCH/DELETE) may consume more than
+  one unit. Every response carries RateLimit-* headers describing the total
+  budget, remaining budget, and seconds until one unit refills.
+rate_limits:
+  - name: default
+    limit_count: 1000
+    interval: minute
+    window_seconds: 60
+    algorithm: token-bucket
+    scope: per API key
+    write_cost: Write requests may count as more than one request against the budget.
+    headers:
+      limit: RateLimit-Limit
+      remaining: RateLimit-Remaining
+      reset: RateLimit-Reset
+    example_headers:
+      RateLimit-Limit: '1000, 1000;window=60'
+      RateLimit-Remaining: '990'
+      RateLimit-Reset: '1'
+    exceeded_status: 429
