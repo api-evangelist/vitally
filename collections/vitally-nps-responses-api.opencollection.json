@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vitally REST Accounts NPS Responses API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NPS Responses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List NPS responses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{subdomain}.rest.vitally.io/resources/npsResponses",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to return. Max/default is 100."
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "The cursor returned from a previous request (from the next property)."
+              },
+              {
+                "name": "sortBy",
+                "value": "",
+                "type": "query",
+                "description": "How to order results. Default updatedAt."
+              }
+            ]
+          },
+          "docs": "List NPS responses"
+        },
+        {
+          "info": {
+            "name": "Get an NPS response",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{subdomain}.rest.vitally.io/resources/npsResponses/:npsResponseId",
+            "params": [
+              {
+                "name": "npsResponseId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an NPS response"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

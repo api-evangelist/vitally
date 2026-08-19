@@ -1,0 +1,401 @@
+{
+  "item": [
+    {
+      "id": "e1572a7b-142c-4da1-be80-3982ba29e3df",
+      "name": "NPS Responses",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "be1322b7-3b78-45a9-afdf-8fd68554ba34",
+          "name": "List NPS responses",
+          "request": {
+            "name": "List NPS responses",
+            "description": {},
+            "url": {
+              "path": [
+                "npsResponses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "Number of items to return. Max/default is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<string>",
+                  "description": "The cursor returned from a previous request (from the next property)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "updatedAt",
+                  "description": "How to order results. Default updatedAt."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "68be52f0-f2b0-455e-9735-84f359e1864a",
+              "name": "A page of NPS responses",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "npsResponses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "updatedAt"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"next\": \"string\",\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"2016-09-30T23:15:32.787Z\",\n      \"updatedAt\": \"1963-06-01T19:09:24.228Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": true,\n        \"key_1\": 8028,\n        \"key_2\": true\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"1988-05-23T16:20:41.552Z\",\n      \"updatedAt\": \"2014-07-20T00:04:00.311Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": 1383.9829440610918,\n        \"key_1\": true,\n        \"key_2\": 8101\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f7bc3c76-c1bc-4e17-84c0-1553b0bda67f",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "npsResponses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "updatedAt"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ac607e00-3569-46bf-926d-9d6eb8ff178c",
+          "name": "Get an NPS response",
+          "request": {
+            "name": "Get an NPS response",
+            "description": {},
+            "url": {
+              "path": [
+                "npsResponses",
+                ":npsResponseId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "npsResponseId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1585fc7b-32c4-4488-b6e0-fde7ff161649",
+              "name": "The NPS response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "npsResponses",
+                    ":npsResponseId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "npsResponseId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"createdAt\": \"2012-06-30T06:24:16.267Z\",\n  \"updatedAt\": \"1947-06-22T00:28:28.198Z\",\n  \"externalId\": \"string\",\n  \"name\": \"string\",\n  \"traits\": {\n    \"key_0\": \"string\"\n  },\n  \"key_0\": \"string\",\n  \"key_1\": \"string\",\n  \"key_2\": 1206,\n  \"key_3\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7765097c-7e3d-4778-927b-b5120d9a0c76",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "npsResponses",
+                    ":npsResponseId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "npsResponseId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "yoursubdomain",
+      "key": "subdomain"
+    },
+    {
+      "type": "string",
+      "value": "https://{{subdomain}}.rest.vitally.io/resources",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b5b65088-f3bb-4205-8eaa-98d56b70e50e",
+    "name": "Vitally REST Accounts NPS Responses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Vitally's public REST API for creating, updating, retrieving and listing the core Customer Success objects — Accounts, Organizations, Users, Tasks, Notes, Conversations and NPS Responses. Authentication is HTTP Basic using a Vitally REST API key as the username. List endpoints use cursor-based pagination ordered by updatedAt (default) or createdAt.\n\nContact Support:\n Name: Vitally",
+      "type": "text/plain"
+    }
+  }
+}

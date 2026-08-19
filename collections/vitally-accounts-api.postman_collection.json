@@ -1,0 +1,1343 @@
+{
+  "item": [
+    {
+      "id": "09011322-5e57-4785-b6ca-0caf0c6fdbff",
+      "name": "Accounts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f1630bdf-0e4f-402e-a29e-581b08aacbf6",
+          "name": "List accounts",
+          "request": {
+            "name": "List accounts",
+            "description": {
+              "content": "Paginated list of Accounts, by default ordered by updatedAt descending.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "Number of items to return. Max/default is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<string>",
+                  "description": "The cursor returned from a previous request (from the next property)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "updatedAt",
+                  "description": "How to order results. Default updatedAt."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "active",
+                  "description": "One of active (default), churned, or activeOrChurned."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "51a7f15c-f6bb-433e-a45d-c2628d113bd4",
+              "name": "A page of accounts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "updatedAt"
+                    },
+                    {
+                      "key": "status",
+                      "value": "active"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"next\": \"string\",\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"2021-07-30T00:36:30.239Z\",\n      \"updatedAt\": \"1985-08-19T07:35:53.144Z\",\n      \"externalId\": \"string\",\n      \"traits\": {\n        \"key_0\": false,\n        \"key_1\": 3727.9663063557223\n      },\n      \"organizationId\": \"string\",\n      \"accountOwnerId\": \"string\",\n      \"mrr\": 2496.3536447421743,\n      \"nextRenewalDate\": \"2007-05-24T01:55:53.298Z\",\n      \"churnedAt\": \"1959-12-16T21:17:48.085Z\",\n      \"firstSeenTimestamp\": \"2000-01-19T20:56:54.986Z\",\n      \"lastSeenTimestamp\": \"1958-03-04T11:16:47.549Z\",\n      \"lastInboundMessageTimestamp\": \"2002-11-08T08:58:21.526Z\",\n      \"lastOutboundMessageTimestamp\": \"1993-08-29T18:05:01.881Z\",\n      \"trialEndDate\": \"2002-11-22T19:13:10.427Z\",\n      \"usersCount\": 1572,\n      \"npsDetractorCount\": 1200,\n      \"npsPassiveCount\": 5065,\n      \"npsPromoterCount\": 7505,\n      \"npsScore\": 4505.587260728248,\n      \"healthScore\": 1042.9574581496759,\n      \"csmId\": \"string\",\n      \"accountExecutiveId\": \"string\",\n      \"keyRoles\": [\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        },\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        }\n      ],\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"1969-04-18T05:43:58.205Z\",\n      \"updatedAt\": \"1960-10-06T13:44:26.987Z\",\n      \"externalId\": \"string\",\n      \"traits\": {\n        \"key_0\": 3684.9253562226013\n      },\n      \"organizationId\": \"string\",\n      \"accountOwnerId\": \"string\",\n      \"mrr\": 1996.49395535468,\n      \"nextRenewalDate\": \"1997-03-15T00:53:47.612Z\",\n      \"churnedAt\": \"1980-01-05T04:02:11.751Z\",\n      \"firstSeenTimestamp\": \"2011-05-27T02:56:46.571Z\",\n      \"lastSeenTimestamp\": \"2016-08-07T00:29:06.241Z\",\n      \"lastInboundMessageTimestamp\": \"1999-11-30T05:24:00.904Z\",\n      \"lastOutboundMessageTimestamp\": \"1964-03-22T06:26:26.028Z\",\n      \"trialEndDate\": \"1999-08-15T07:06:23.609Z\",\n      \"usersCount\": 1362,\n      \"npsDetractorCount\": 334,\n      \"npsPassiveCount\": 875,\n      \"npsPromoterCount\": 430,\n      \"npsScore\": 4581.735970920107,\n      \"healthScore\": 7932.4026751519705,\n      \"csmId\": \"string\",\n      \"accountExecutiveId\": \"string\",\n      \"keyRoles\": [\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        },\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        }\n      ],\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2e945ee-96cc-42b3-af48-2ed1097e6867",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "updatedAt"
+                    },
+                    {
+                      "key": "status",
+                      "value": "active"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "96db661e-0d03-47db-bfd6-5559f1784a9d",
+              "name": "Too Many Requests - rate limit exceeded (default 1000 requests/min)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "updatedAt"
+                    },
+                    {
+                      "key": "status",
+                      "value": "active"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "e.g. 1000, 1000;window=60",
+                  "key": "RateLimit-Limit",
+                  "value": "string"
+                },
+                {
+                  "disabled": false,
+                  "key": "RateLimit-Remaining",
+                  "value": "3587",
+                  "description": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "RateLimit-Reset",
+                  "value": "3587",
+                  "description": ""
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87595afc-49c2-47ff-b0e3-479e5474cef9",
+          "name": "Create an account",
+          "request": {
+            "name": "Create an account",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"organizationId\": \"<string,null>\",\n  \"accountOwnerId\": \"<string,null>\",\n  \"traits\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "940c5805-8d82-4596-a5ed-6561d5f9d934",
+              "name": "The created account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"organizationId\": \"<string,null>\",\n  \"accountOwnerId\": \"<string,null>\",\n  \"traits\": {\n    \"key_0\": 6976.795747605149\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"createdAt\": \"2007-07-02T21:24:37.113Z\",\n  \"updatedAt\": \"1956-04-14T04:35:12.656Z\",\n  \"externalId\": \"string\",\n  \"traits\": {\n    \"key_0\": \"string\",\n    \"key_1\": 3983\n  },\n  \"organizationId\": \"string\",\n  \"accountOwnerId\": \"string\",\n  \"mrr\": 1724.1790114703203,\n  \"nextRenewalDate\": \"1994-12-05T00:40:03.712Z\",\n  \"churnedAt\": \"2003-01-14T06:50:47.412Z\",\n  \"firstSeenTimestamp\": \"1969-12-22T06:53:54.424Z\",\n  \"lastSeenTimestamp\": \"1961-10-10T16:24:19.940Z\",\n  \"lastInboundMessageTimestamp\": \"2026-04-11T08:57:26.221Z\",\n  \"lastOutboundMessageTimestamp\": \"1968-06-27T22:23:39.011Z\",\n  \"trialEndDate\": \"1959-11-27T08:50:11.578Z\",\n  \"usersCount\": 4768,\n  \"npsDetractorCount\": 9415,\n  \"npsPassiveCount\": 5084,\n  \"npsPromoterCount\": 2156,\n  \"npsScore\": 576.0295432646411,\n  \"healthScore\": 1416.736296906843,\n  \"csmId\": \"string\",\n  \"accountExecutiveId\": \"string\",\n  \"keyRoles\": [\n    {\n      \"vitallyUser\": {},\n      \"keyRole\": \"string\"\n    },\n    {\n      \"vitallyUser\": {},\n      \"keyRole\": \"string\"\n    }\n  ],\n  \"segments\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "858c9ee2-c3f6-4782-b479-5febf4f6a11f",
+              "name": "Bad Request - the body of the request needs to be reviewed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"organizationId\": \"<string,null>\",\n  \"accountOwnerId\": \"<string,null>\",\n  \"traits\": {\n    \"key_0\": 6976.795747605149\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1cdef5c9-aea6-4c74-933d-c23535d2a2e5",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"organizationId\": \"<string,null>\",\n  \"accountOwnerId\": \"<string,null>\",\n  \"traits\": {\n    \"key_0\": 6976.795747605149\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1b20095b-202e-4d20-8e47-cfe413aaa4b4",
+          "name": "Get an account",
+          "request": {
+            "name": "Get an account",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41dfb22d-b92d-4679-8691-a166264ede6b",
+              "name": "The account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"createdAt\": \"2007-07-02T21:24:37.113Z\",\n  \"updatedAt\": \"1956-04-14T04:35:12.656Z\",\n  \"externalId\": \"string\",\n  \"traits\": {\n    \"key_0\": \"string\",\n    \"key_1\": 3983\n  },\n  \"organizationId\": \"string\",\n  \"accountOwnerId\": \"string\",\n  \"mrr\": 1724.1790114703203,\n  \"nextRenewalDate\": \"1994-12-05T00:40:03.712Z\",\n  \"churnedAt\": \"2003-01-14T06:50:47.412Z\",\n  \"firstSeenTimestamp\": \"1969-12-22T06:53:54.424Z\",\n  \"lastSeenTimestamp\": \"1961-10-10T16:24:19.940Z\",\n  \"lastInboundMessageTimestamp\": \"2026-04-11T08:57:26.221Z\",\n  \"lastOutboundMessageTimestamp\": \"1968-06-27T22:23:39.011Z\",\n  \"trialEndDate\": \"1959-11-27T08:50:11.578Z\",\n  \"usersCount\": 4768,\n  \"npsDetractorCount\": 9415,\n  \"npsPassiveCount\": 5084,\n  \"npsPromoterCount\": 2156,\n  \"npsScore\": 576.0295432646411,\n  \"healthScore\": 1416.736296906843,\n  \"csmId\": \"string\",\n  \"accountExecutiveId\": \"string\",\n  \"keyRoles\": [\n    {\n      \"vitallyUser\": {},\n      \"keyRole\": \"string\"\n    },\n    {\n      \"vitallyUser\": {},\n      \"keyRole\": \"string\"\n    }\n  ],\n  \"segments\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2e74f271-2bcb-4bee-b6a7-b1b126b2eac7",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b8838da-142d-4ec5-8fa4-34a3744908a4",
+          "name": "Update an account",
+          "request": {
+            "name": "Update an account",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"organizationId\": \"<string,null>\",\n  \"accountOwnerId\": \"<string,null>\",\n  \"traits\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cc1dc641-e173-492a-ae71-4724d1a410af",
+              "name": "The updated account",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"organizationId\": \"<string,null>\",\n  \"accountOwnerId\": \"<string,null>\",\n  \"traits\": {\n    \"key_0\": 6976.795747605149\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"createdAt\": \"2007-07-02T21:24:37.113Z\",\n  \"updatedAt\": \"1956-04-14T04:35:12.656Z\",\n  \"externalId\": \"string\",\n  \"traits\": {\n    \"key_0\": \"string\",\n    \"key_1\": 3983\n  },\n  \"organizationId\": \"string\",\n  \"accountOwnerId\": \"string\",\n  \"mrr\": 1724.1790114703203,\n  \"nextRenewalDate\": \"1994-12-05T00:40:03.712Z\",\n  \"churnedAt\": \"2003-01-14T06:50:47.412Z\",\n  \"firstSeenTimestamp\": \"1969-12-22T06:53:54.424Z\",\n  \"lastSeenTimestamp\": \"1961-10-10T16:24:19.940Z\",\n  \"lastInboundMessageTimestamp\": \"2026-04-11T08:57:26.221Z\",\n  \"lastOutboundMessageTimestamp\": \"1968-06-27T22:23:39.011Z\",\n  \"trialEndDate\": \"1959-11-27T08:50:11.578Z\",\n  \"usersCount\": 4768,\n  \"npsDetractorCount\": 9415,\n  \"npsPassiveCount\": 5084,\n  \"npsPromoterCount\": 2156,\n  \"npsScore\": 576.0295432646411,\n  \"healthScore\": 1416.736296906843,\n  \"csmId\": \"string\",\n  \"accountExecutiveId\": \"string\",\n  \"keyRoles\": [\n    {\n      \"vitallyUser\": {},\n      \"keyRole\": \"string\"\n    },\n    {\n      \"vitallyUser\": {},\n      \"keyRole\": \"string\"\n    }\n  ],\n  \"segments\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "70575f13-c930-4cbb-970b-54dacaae3391",
+              "name": "Bad Request - the body of the request needs to be reviewed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"organizationId\": \"<string,null>\",\n  \"accountOwnerId\": \"<string,null>\",\n  \"traits\": {\n    \"key_0\": 6976.795747605149\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73b11c65-811d-4847-88d3-5d1966774036",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"organizationId\": \"<string,null>\",\n  \"accountOwnerId\": \"<string,null>\",\n  \"traits\": {\n    \"key_0\": 6976.795747605149\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ab12511b-d60e-4748-8fa4-b69e05db9bcb",
+          "name": "Delete an account",
+          "request": {
+            "name": "Delete an account",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "17c8f274-0cf0-4517-aee3-2a292c349efa",
+              "name": "Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "dca01d3c-ba5c-4e4b-abc8-4ebf1dca09d4",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6fe3429c-3072-4969-ad9a-fc85115b81f7",
+          "name": "List accounts for an organization",
+          "request": {
+            "name": "List accounts for an organization",
+            "description": {},
+            "url": {
+              "path": [
+                "organizations",
+                ":organizationId",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "Number of items to return. Max/default is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<string>",
+                  "description": "The cursor returned from a previous request (from the next property)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organizationId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "48a9b197-e4c4-48e6-9246-bc4acc1e319a",
+              "name": "A page of accounts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organizationId",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organizationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"next\": \"string\",\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"2021-07-30T00:36:30.239Z\",\n      \"updatedAt\": \"1985-08-19T07:35:53.144Z\",\n      \"externalId\": \"string\",\n      \"traits\": {\n        \"key_0\": false,\n        \"key_1\": 3727.9663063557223\n      },\n      \"organizationId\": \"string\",\n      \"accountOwnerId\": \"string\",\n      \"mrr\": 2496.3536447421743,\n      \"nextRenewalDate\": \"2007-05-24T01:55:53.298Z\",\n      \"churnedAt\": \"1959-12-16T21:17:48.085Z\",\n      \"firstSeenTimestamp\": \"2000-01-19T20:56:54.986Z\",\n      \"lastSeenTimestamp\": \"1958-03-04T11:16:47.549Z\",\n      \"lastInboundMessageTimestamp\": \"2002-11-08T08:58:21.526Z\",\n      \"lastOutboundMessageTimestamp\": \"1993-08-29T18:05:01.881Z\",\n      \"trialEndDate\": \"2002-11-22T19:13:10.427Z\",\n      \"usersCount\": 1572,\n      \"npsDetractorCount\": 1200,\n      \"npsPassiveCount\": 5065,\n      \"npsPromoterCount\": 7505,\n      \"npsScore\": 4505.587260728248,\n      \"healthScore\": 1042.9574581496759,\n      \"csmId\": \"string\",\n      \"accountExecutiveId\": \"string\",\n      \"keyRoles\": [\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        },\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        }\n      ],\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"1969-04-18T05:43:58.205Z\",\n      \"updatedAt\": \"1960-10-06T13:44:26.987Z\",\n      \"externalId\": \"string\",\n      \"traits\": {\n        \"key_0\": 3684.9253562226013\n      },\n      \"organizationId\": \"string\",\n      \"accountOwnerId\": \"string\",\n      \"mrr\": 1996.49395535468,\n      \"nextRenewalDate\": \"1997-03-15T00:53:47.612Z\",\n      \"churnedAt\": \"1980-01-05T04:02:11.751Z\",\n      \"firstSeenTimestamp\": \"2011-05-27T02:56:46.571Z\",\n      \"lastSeenTimestamp\": \"2016-08-07T00:29:06.241Z\",\n      \"lastInboundMessageTimestamp\": \"1999-11-30T05:24:00.904Z\",\n      \"lastOutboundMessageTimestamp\": \"1964-03-22T06:26:26.028Z\",\n      \"trialEndDate\": \"1999-08-15T07:06:23.609Z\",\n      \"usersCount\": 1362,\n      \"npsDetractorCount\": 334,\n      \"npsPassiveCount\": 875,\n      \"npsPromoterCount\": 430,\n      \"npsScore\": 4581.735970920107,\n      \"healthScore\": 7932.4026751519705,\n      \"csmId\": \"string\",\n      \"accountExecutiveId\": \"string\",\n      \"keyRoles\": [\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        },\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        }\n      ],\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6c7abc32-2550-4a23-b26e-6d200b264639",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "organizations",
+                    ":organizationId",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organizationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "yoursubdomain",
+      "key": "subdomain"
+    },
+    {
+      "type": "string",
+      "value": "https://{{subdomain}}.rest.vitally.io/resources",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2563f2ed-6b1e-4a4d-8464-2c085c8f684e",
+    "name": "Vitally REST Accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Vitally's public REST API for creating, updating, retrieving and listing the core Customer Success objects — Accounts, Organizations, Users, Tasks, Notes, Conversations and NPS Responses. Authentication is HTTP Basic using a Vitally REST API key as the username. List endpoints use cursor-based pagination ordered by updatedAt (default) or createdAt.\n\nContact Support:\n Name: Vitally",
+      "type": "text/plain"
+    }
+  }
+}

@@ -2,87 +2,86 @@ generated: '2026-07-21'
 method: searched
 status: published
 source: https://docs.vitally.io/en/articles/15862100-vitally-mcp-server-beta
-description: >-
-  Vitally operates an official remote MCP (Model Context Protocol) server (Beta)
-  that connects any MCP-compatible AI client (Claude, ChatGPT, Cursor) to a
-  Vitally workspace. Authentication is a standard OAuth consent flow with dynamic
-  client registration — there is no API key to paste. The server respects the
-  connecting user's existing Vitally permissions and Access Groups, and records
-  created by the AI are attributed to that user. Tools cover read-only search /
-  retrieval across the Customer Success object model plus a small set of write
-  actions. Tool names adapt to each workspace's terminology. Tool list captured
-  verbatim from the Vitally MCP documentation.
+description: Vitally operates an official remote MCP (Model Context Protocol) server (Beta) that connects
+  any MCP-compatible AI client (Claude, ChatGPT, Cursor) to a Vitally workspace. Authentication is a standard
+  OAuth consent flow with dynamic client registration — there is no API key to paste. The server respects
+  the connecting user's existing Vitally permissions and Access Groups, and records created by the AI
+  are attributed to that user. Tools cover read-only search / retrieval across the Customer Success object
+  model plus a small set of write actions. Tool names adapt to each workspace's terminology. Tool list
+  captured verbatim from the Vitally MCP documentation.
 server:
   name: vitally
   transport: http
   url: https://mcp.vitally.io/mcp/v0
   auth: oauth2
-  auth_notes: >-
-    OAuth authorization-code consent flow initiated by the client on first
-    connect; dynamic client registration (no manual credential entry). Access is
-    tied to the connecting Vitally user account and honors Access Groups.
+  auth_notes: OAuth authorization-code consent flow initiated by the client on first connect; dynamic
+    client registration (no manual credential entry). Access is tied to the connecting Vitally user account
+    and honors Access Groups.
 tools:
-  # Read-only tools
-  - name: retrieve_content
-    description: Retrieve the full content of a record.
-    access: read
-  - name: search_accounts
-    description: Search accounts (name or external ID; scoped to an account/organization).
-    access: read
-  - name: search_conversations
-    description: Search conversations.
-    access: read
-  - name: search_custom_objects
-    description: Search custom object instances by name.
-    access: read
-  - name: search_docs
-    description: Search docs.
-    access: read
-  - name: search_goals
-    description: Search goals.
-    access: read
-  - name: search_indicators
-    description: Search indicators.
-    access: read
-  - name: search_meetings
-    description: Search meetings.
-    access: read
-  - name: search_note
-    description: Search notes.
-    access: read
-  - name: search_nps_responses
-    description: Search NPS responses.
-    access: read
-  - name: search_object_properties
-    description: Search object properties.
-    access: read
-  - name: search_projects
-    description: Search projects.
-    access: read
-  - name: search_segments
-    description: Search segments.
-    access: read
-  - name: search_tasks
-    description: Search tasks.
-    access: read
-  - name: search_team_members
-    description: Search team members (admins).
-    access: read
-  - name: search_users
-    description: Search users.
-    access: read
-  # Write tools
-  - name: create_custom_object
-    description: Create a custom object record (requires an account or organization to attach to).
-    access: write
-  - name: create_note
-    description: Create a note (requires an account or organization to attach to).
-    access: write
-  - name: create_task
-    description: Create a task (requires an account or organization to attach to).
-    access: write
-notes: >-
-  Beta — the tool set will continue to grow and some behavior may change. Write
-  actions run directly without a separate confirmation step in the tool, so the
-  connecting user should review AI-proposed records before proceeding. Clients
-  connect by adding the connector URL and completing the browser OAuth flow.
+- name: retrieve_content
+  description: Retrieve the full content of a record.
+  access: read
+- name: search_accounts
+  description: Search accounts (name or external ID; scoped to an account/organization).
+  access: read
+- name: search_conversations
+  description: Search conversations.
+  access: read
+- name: search_custom_objects
+  description: Search custom object instances by name.
+  access: read
+- name: search_docs
+  description: Search docs.
+  access: read
+- name: search_goals
+  description: Search goals.
+  access: read
+- name: search_indicators
+  description: Search indicators.
+  access: read
+- name: search_meetings
+  description: Search meetings.
+  access: read
+- name: search_note
+  description: Search notes.
+  access: read
+- name: search_nps_responses
+  description: Search NPS responses.
+  access: read
+- name: search_object_properties
+  description: Search object properties.
+  access: read
+- name: search_projects
+  description: Search projects.
+  access: read
+- name: search_segments
+  description: Search segments.
+  access: read
+- name: search_tasks
+  description: Search tasks.
+  access: read
+- name: search_team_members
+  description: Search team members (admins).
+  access: read
+- name: search_users
+  description: Search users.
+  access: read
+- name: create_custom_object
+  description: Create a custom object record (requires an account or organization to attach to).
+  access: write
+- name: create_note
+  description: Create a note (requires an account or organization to attach to).
+  access: write
+- name: create_task
+  description: Create a task (requires an account or organization to attach to).
+  access: write
+notes: Beta — the tool set will continue to grow and some behavior may change. Write actions run directly
+  without a separate confirmation step in the tool, so the connecting user should review AI-proposed records
+  before proceeding. Clients connect by adding the connector URL and completing the browser OAuth flow.
+deployment:
+  mode: remote
+  endpoint: https://mcp.vitally.io/mcp/v0
+  verified: probed
+  probe: gated
+  checked: '2026-08-12'
+  source: catalog MCP census

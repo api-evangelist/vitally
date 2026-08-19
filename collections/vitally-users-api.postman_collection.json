@@ -1,0 +1,958 @@
+{
+  "item": [
+    {
+      "id": "14c8bfca-8868-4dd8-a0e4-1caf9e3f9ff6",
+      "name": "Users",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c5fba66f-7e87-46c6-aac0-7740b2d220e2",
+          "name": "List users for an account",
+          "request": {
+            "name": "List users for an account",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":accountId",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "Number of items to return. Max/default is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<string>",
+                  "description": "The cursor returned from a previous request (from the next property)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "accountId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b9bb65f-6c74-4c9f-9814-41607b96d6b1",
+              "name": "A page of users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"next\": \"string\",\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"1973-10-15T10:59:27.117Z\",\n      \"updatedAt\": \"1990-12-21T21:13:06.769Z\",\n      \"externalId\": \"string\",\n      \"email\": \"uwBTUenx2ujOh9@VjIeUbWCq.dtly\",\n      \"avatar\": \"string\",\n      \"traits\": {\n        \"key_0\": 8987.346773065423,\n        \"key_1\": \"string\",\n        \"key_2\": 8321\n      },\n      \"firstKnown\": \"1949-10-25T12:35:06.772Z\",\n      \"lastSeenTimestamp\": \"1993-04-14T00:30:39.131Z\",\n      \"lastInboundMessageTimestamp\": \"1999-04-17T11:59:19.317Z\",\n      \"lastOutboundMessageTimestamp\": \"2008-05-02T15:14:48.178Z\",\n      \"npsLastScore\": 2271.5931110331176,\n      \"npsLastFeedback\": \"string\",\n      \"npsLastRespondedAt\": \"1997-10-29T04:52:11.433Z\",\n      \"unsubscribedFromConversations\": false,\n      \"unsubscribedFromConversationsAt\": \"1982-05-13T15:54:08.999Z\",\n      \"deactivatedAt\": \"2020-12-23T04:27:38.118Z\",\n      \"permanentlyBounced\": true,\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ],\n      \"accounts\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"createdAt\": \"1967-09-21T06:28:10.572Z\",\n          \"updatedAt\": \"1975-11-20T06:48:22.607Z\",\n          \"externalId\": \"string\",\n          \"traits\": {\n            \"key_0\": 5361.416909964444\n          },\n          \"organizationId\": \"string\",\n          \"accountOwnerId\": \"string\",\n          \"mrr\": 5453.39104399808,\n          \"nextRenewalDate\": \"1987-10-24T12:53:59.412Z\",\n          \"churnedAt\": \"1954-05-29T04:14:48.136Z\",\n          \"firstSeenTimestamp\": \"1995-04-29T18:41:17.908Z\",\n          \"lastSeenTimestamp\": \"1977-11-29T04:13:05.351Z\",\n          \"lastInboundMessageTimestamp\": \"1979-01-15T01:15:14.589Z\",\n          \"lastOutboundMessageTimestamp\": \"1956-01-03T22:12:17.437Z\",\n          \"trialEndDate\": \"1991-05-22T06:00:15.951Z\",\n          \"usersCount\": 6187,\n          \"npsDetractorCount\": 8757,\n          \"npsPassiveCount\": 8031,\n          \"npsPromoterCount\": 5413,\n          \"npsScore\": 1085.5428101886034,\n          \"healthScore\": 9654.310515801697,\n          \"csmId\": \"string\",\n          \"accountExecutiveId\": \"string\",\n          \"keyRoles\": [\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"segments\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"createdAt\": \"1989-03-27T15:04:38.416Z\",\n          \"updatedAt\": \"1948-06-27T01:35:45.623Z\",\n          \"externalId\": \"string\",\n          \"traits\": {\n            \"key_0\": 4175,\n            \"key_1\": 8691\n          },\n          \"organizationId\": \"string\",\n          \"accountOwnerId\": \"string\",\n          \"mrr\": 7883.082196230013,\n          \"nextRenewalDate\": \"2016-11-23T09:17:37.172Z\",\n          \"churnedAt\": \"1970-05-22T06:07:58.177Z\",\n          \"firstSeenTimestamp\": \"2024-05-21T22:39:48.075Z\",\n          \"lastSeenTimestamp\": \"1964-11-11T08:53:58.530Z\",\n          \"lastInboundMessageTimestamp\": \"2007-01-07T04:57:45.564Z\",\n          \"lastOutboundMessageTimestamp\": \"1955-02-11T16:42:59.315Z\",\n          \"trialEndDate\": \"1956-03-01T17:54:01.632Z\",\n          \"usersCount\": 8547,\n          \"npsDetractorCount\": 1814,\n          \"npsPassiveCount\": 1509,\n          \"npsPromoterCount\": 9196,\n          \"npsScore\": 8485.770562477379,\n          \"healthScore\": 6377.353424300294,\n          \"csmId\": \"string\",\n          \"accountExecutiveId\": \"string\",\n          \"keyRoles\": [\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"segments\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      ],\n      \"organizations\": [\n        {\n          \"id\": \"string\",\n          \"createdAt\": \"1962-04-22T09:36:15.299Z\",\n          \"updatedAt\": \"2004-01-15T18:16:57.289Z\",\n          \"externalId\": \"string\",\n          \"name\": \"string\",\n          \"traits\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"createdAt\": \"1988-02-25T01:26:29.868Z\",\n          \"updatedAt\": \"1978-11-08T11:37:05.256Z\",\n          \"externalId\": \"string\",\n          \"name\": \"string\",\n          \"traits\": {\n            \"key_0\": true\n          }\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"2004-12-01T14:23:46.820Z\",\n      \"updatedAt\": \"1977-03-10T18:15:48.703Z\",\n      \"externalId\": \"string\",\n      \"email\": \"Z1Ih@uGeDhHEDMb.ugbw\",\n      \"avatar\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\"\n      },\n      \"firstKnown\": \"2001-05-14T09:11:10.422Z\",\n      \"lastSeenTimestamp\": \"1952-05-17T23:00:28.314Z\",\n      \"lastInboundMessageTimestamp\": \"1957-03-10T20:12:06.127Z\",\n      \"lastOutboundMessageTimestamp\": \"1985-10-05T06:11:31.511Z\",\n      \"npsLastScore\": 571.4617252292264,\n      \"npsLastFeedback\": \"string\",\n      \"npsLastRespondedAt\": \"1983-10-12T05:40:45.750Z\",\n      \"unsubscribedFromConversations\": false,\n      \"unsubscribedFromConversationsAt\": \"1993-12-31T09:11:49.871Z\",\n      \"deactivatedAt\": \"2020-08-22T04:17:57.653Z\",\n      \"permanentlyBounced\": false,\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ],\n      \"accounts\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"createdAt\": \"1980-09-29T21:11:13.079Z\",\n          \"updatedAt\": \"1984-03-09T06:40:04.338Z\",\n          \"externalId\": \"string\",\n          \"traits\": {\n            \"key_0\": 94\n          },\n          \"organizationId\": \"string\",\n          \"accountOwnerId\": \"string\",\n          \"mrr\": 4286.845729887736,\n          \"nextRenewalDate\": \"1963-04-11T11:38:48.983Z\",\n          \"churnedAt\": \"2011-06-09T07:26:16.134Z\",\n          \"firstSeenTimestamp\": \"1988-10-18T03:25:33.962Z\",\n          \"lastSeenTimestamp\": \"1957-04-22T07:55:51.668Z\",\n          \"lastInboundMessageTimestamp\": \"1984-07-01T23:44:56.098Z\",\n          \"lastOutboundMessageTimestamp\": \"2023-02-26T03:50:56.798Z\",\n          \"trialEndDate\": \"2015-03-05T10:53:20.768Z\",\n          \"usersCount\": 1898,\n          \"npsDetractorCount\": 9806,\n          \"npsPassiveCount\": 8304,\n          \"npsPromoterCount\": 5574,\n          \"npsScore\": 6453.002396195377,\n          \"healthScore\": 7169.19322980299,\n          \"csmId\": \"string\",\n          \"accountExecutiveId\": \"string\",\n          \"keyRoles\": [\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"segments\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"createdAt\": \"1960-08-13T11:37:31.884Z\",\n          \"updatedAt\": \"1994-12-01T22:15:27.154Z\",\n          \"externalId\": \"string\",\n          \"traits\": {\n            \"key_0\": \"string\",\n            \"key_1\": false,\n            \"key_2\": 5071.653848165169\n          },\n          \"organizationId\": \"string\",\n          \"accountOwnerId\": \"string\",\n          \"mrr\": 2879.562927861066,\n          \"nextRenewalDate\": \"1968-03-27T15:56:17.336Z\",\n          \"churnedAt\": \"1955-05-07T20:52:12.501Z\",\n          \"firstSeenTimestamp\": \"1949-11-19T23:38:50.396Z\",\n          \"lastSeenTimestamp\": \"1958-05-08T20:42:06.914Z\",\n          \"lastInboundMessageTimestamp\": \"1963-02-06T00:12:35.907Z\",\n          \"lastOutboundMessageTimestamp\": \"1992-12-31T04:01:18.069Z\",\n          \"trialEndDate\": \"1981-10-15T17:11:40.808Z\",\n          \"usersCount\": 5827,\n          \"npsDetractorCount\": 4167,\n          \"npsPassiveCount\": 9019,\n          \"npsPromoterCount\": 2013,\n          \"npsScore\": 4694.253627363771,\n          \"healthScore\": 2326.5038205052633,\n          \"csmId\": \"string\",\n          \"accountExecutiveId\": \"string\",\n          \"keyRoles\": [\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"segments\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      ],\n      \"organizations\": [\n        {\n          \"id\": \"string\",\n          \"createdAt\": \"1963-09-23T15:30:48.148Z\",\n          \"updatedAt\": \"1954-01-29T05:16:22.991Z\",\n          \"externalId\": \"string\",\n          \"name\": \"string\",\n          \"traits\": {\n            \"key_0\": \"string\",\n            \"key_1\": 4293.913551267325\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"createdAt\": \"2002-05-07T09:45:57.793Z\",\n          \"updatedAt\": \"1974-11-12T14:18:12.899Z\",\n          \"externalId\": \"string\",\n          \"name\": \"string\",\n          \"traits\": {\n            \"key_0\": false\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "50511937-9b12-437c-8425-5851d08fb4ab",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "accountId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7881707-2cee-43a8-a055-fa0c67cd65ee",
+          "name": "List users",
+          "request": {
+            "name": "List users",
+            "description": {},
+            "url": {
+              "path": [
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "100",
+                  "description": "Number of items to return. Max/default is 100."
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "<string>",
+                  "description": "The cursor returned from a previous request (from the next property)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sortBy",
+                  "value": "updatedAt",
+                  "description": "How to order results. Default updatedAt."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8919b30e-a82f-4267-970f-174c238ed908",
+              "name": "A page of users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "updatedAt"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"next\": \"string\",\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"1973-10-15T10:59:27.117Z\",\n      \"updatedAt\": \"1990-12-21T21:13:06.769Z\",\n      \"externalId\": \"string\",\n      \"email\": \"uwBTUenx2ujOh9@VjIeUbWCq.dtly\",\n      \"avatar\": \"string\",\n      \"traits\": {\n        \"key_0\": 8987.346773065423,\n        \"key_1\": \"string\",\n        \"key_2\": 8321\n      },\n      \"firstKnown\": \"1949-10-25T12:35:06.772Z\",\n      \"lastSeenTimestamp\": \"1993-04-14T00:30:39.131Z\",\n      \"lastInboundMessageTimestamp\": \"1999-04-17T11:59:19.317Z\",\n      \"lastOutboundMessageTimestamp\": \"2008-05-02T15:14:48.178Z\",\n      \"npsLastScore\": 2271.5931110331176,\n      \"npsLastFeedback\": \"string\",\n      \"npsLastRespondedAt\": \"1997-10-29T04:52:11.433Z\",\n      \"unsubscribedFromConversations\": false,\n      \"unsubscribedFromConversationsAt\": \"1982-05-13T15:54:08.999Z\",\n      \"deactivatedAt\": \"2020-12-23T04:27:38.118Z\",\n      \"permanentlyBounced\": true,\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ],\n      \"accounts\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"createdAt\": \"1967-09-21T06:28:10.572Z\",\n          \"updatedAt\": \"1975-11-20T06:48:22.607Z\",\n          \"externalId\": \"string\",\n          \"traits\": {\n            \"key_0\": 5361.416909964444\n          },\n          \"organizationId\": \"string\",\n          \"accountOwnerId\": \"string\",\n          \"mrr\": 5453.39104399808,\n          \"nextRenewalDate\": \"1987-10-24T12:53:59.412Z\",\n          \"churnedAt\": \"1954-05-29T04:14:48.136Z\",\n          \"firstSeenTimestamp\": \"1995-04-29T18:41:17.908Z\",\n          \"lastSeenTimestamp\": \"1977-11-29T04:13:05.351Z\",\n          \"lastInboundMessageTimestamp\": \"1979-01-15T01:15:14.589Z\",\n          \"lastOutboundMessageTimestamp\": \"1956-01-03T22:12:17.437Z\",\n          \"trialEndDate\": \"1991-05-22T06:00:15.951Z\",\n          \"usersCount\": 6187,\n          \"npsDetractorCount\": 8757,\n          \"npsPassiveCount\": 8031,\n          \"npsPromoterCount\": 5413,\n          \"npsScore\": 1085.5428101886034,\n          \"healthScore\": 9654.310515801697,\n          \"csmId\": \"string\",\n          \"accountExecutiveId\": \"string\",\n          \"keyRoles\": [\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"segments\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"createdAt\": \"1989-03-27T15:04:38.416Z\",\n          \"updatedAt\": \"1948-06-27T01:35:45.623Z\",\n          \"externalId\": \"string\",\n          \"traits\": {\n            \"key_0\": 4175,\n            \"key_1\": 8691\n          },\n          \"organizationId\": \"string\",\n          \"accountOwnerId\": \"string\",\n          \"mrr\": 7883.082196230013,\n          \"nextRenewalDate\": \"2016-11-23T09:17:37.172Z\",\n          \"churnedAt\": \"1970-05-22T06:07:58.177Z\",\n          \"firstSeenTimestamp\": \"2024-05-21T22:39:48.075Z\",\n          \"lastSeenTimestamp\": \"1964-11-11T08:53:58.530Z\",\n          \"lastInboundMessageTimestamp\": \"2007-01-07T04:57:45.564Z\",\n          \"lastOutboundMessageTimestamp\": \"1955-02-11T16:42:59.315Z\",\n          \"trialEndDate\": \"1956-03-01T17:54:01.632Z\",\n          \"usersCount\": 8547,\n          \"npsDetractorCount\": 1814,\n          \"npsPassiveCount\": 1509,\n          \"npsPromoterCount\": 9196,\n          \"npsScore\": 8485.770562477379,\n          \"healthScore\": 6377.353424300294,\n          \"csmId\": \"string\",\n          \"accountExecutiveId\": \"string\",\n          \"keyRoles\": [\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"segments\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      ],\n      \"organizations\": [\n        {\n          \"id\": \"string\",\n          \"createdAt\": \"1962-04-22T09:36:15.299Z\",\n          \"updatedAt\": \"2004-01-15T18:16:57.289Z\",\n          \"externalId\": \"string\",\n          \"name\": \"string\",\n          \"traits\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"createdAt\": \"1988-02-25T01:26:29.868Z\",\n          \"updatedAt\": \"1978-11-08T11:37:05.256Z\",\n          \"externalId\": \"string\",\n          \"name\": \"string\",\n          \"traits\": {\n            \"key_0\": true\n          }\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"2004-12-01T14:23:46.820Z\",\n      \"updatedAt\": \"1977-03-10T18:15:48.703Z\",\n      \"externalId\": \"string\",\n      \"email\": \"Z1Ih@uGeDhHEDMb.ugbw\",\n      \"avatar\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\"\n      },\n      \"firstKnown\": \"2001-05-14T09:11:10.422Z\",\n      \"lastSeenTimestamp\": \"1952-05-17T23:00:28.314Z\",\n      \"lastInboundMessageTimestamp\": \"1957-03-10T20:12:06.127Z\",\n      \"lastOutboundMessageTimestamp\": \"1985-10-05T06:11:31.511Z\",\n      \"npsLastScore\": 571.4617252292264,\n      \"npsLastFeedback\": \"string\",\n      \"npsLastRespondedAt\": \"1983-10-12T05:40:45.750Z\",\n      \"unsubscribedFromConversations\": false,\n      \"unsubscribedFromConversationsAt\": \"1993-12-31T09:11:49.871Z\",\n      \"deactivatedAt\": \"2020-08-22T04:17:57.653Z\",\n      \"permanentlyBounced\": false,\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ],\n      \"accounts\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"createdAt\": \"1980-09-29T21:11:13.079Z\",\n          \"updatedAt\": \"1984-03-09T06:40:04.338Z\",\n          \"externalId\": \"string\",\n          \"traits\": {\n            \"key_0\": 94\n          },\n          \"organizationId\": \"string\",\n          \"accountOwnerId\": \"string\",\n          \"mrr\": 4286.845729887736,\n          \"nextRenewalDate\": \"1963-04-11T11:38:48.983Z\",\n          \"churnedAt\": \"2011-06-09T07:26:16.134Z\",\n          \"firstSeenTimestamp\": \"1988-10-18T03:25:33.962Z\",\n          \"lastSeenTimestamp\": \"1957-04-22T07:55:51.668Z\",\n          \"lastInboundMessageTimestamp\": \"1984-07-01T23:44:56.098Z\",\n          \"lastOutboundMessageTimestamp\": \"2023-02-26T03:50:56.798Z\",\n          \"trialEndDate\": \"2015-03-05T10:53:20.768Z\",\n          \"usersCount\": 1898,\n          \"npsDetractorCount\": 9806,\n          \"npsPassiveCount\": 8304,\n          \"npsPromoterCount\": 5574,\n          \"npsScore\": 6453.002396195377,\n          \"healthScore\": 7169.19322980299,\n          \"csmId\": \"string\",\n          \"accountExecutiveId\": \"string\",\n          \"keyRoles\": [\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"segments\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"createdAt\": \"1960-08-13T11:37:31.884Z\",\n          \"updatedAt\": \"1994-12-01T22:15:27.154Z\",\n          \"externalId\": \"string\",\n          \"traits\": {\n            \"key_0\": \"string\",\n            \"key_1\": false,\n            \"key_2\": 5071.653848165169\n          },\n          \"organizationId\": \"string\",\n          \"accountOwnerId\": \"string\",\n          \"mrr\": 2879.562927861066,\n          \"nextRenewalDate\": \"1968-03-27T15:56:17.336Z\",\n          \"churnedAt\": \"1955-05-07T20:52:12.501Z\",\n          \"firstSeenTimestamp\": \"1949-11-19T23:38:50.396Z\",\n          \"lastSeenTimestamp\": \"1958-05-08T20:42:06.914Z\",\n          \"lastInboundMessageTimestamp\": \"1963-02-06T00:12:35.907Z\",\n          \"lastOutboundMessageTimestamp\": \"1992-12-31T04:01:18.069Z\",\n          \"trialEndDate\": \"1981-10-15T17:11:40.808Z\",\n          \"usersCount\": 5827,\n          \"npsDetractorCount\": 4167,\n          \"npsPassiveCount\": 9019,\n          \"npsPromoterCount\": 2013,\n          \"npsScore\": 4694.253627363771,\n          \"healthScore\": 2326.5038205052633,\n          \"csmId\": \"string\",\n          \"accountExecutiveId\": \"string\",\n          \"keyRoles\": [\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"vitallyUser\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"keyRole\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"segments\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        }\n      ],\n      \"organizations\": [\n        {\n          \"id\": \"string\",\n          \"createdAt\": \"1963-09-23T15:30:48.148Z\",\n          \"updatedAt\": \"1954-01-29T05:16:22.991Z\",\n          \"externalId\": \"string\",\n          \"name\": \"string\",\n          \"traits\": {\n            \"key_0\": \"string\",\n            \"key_1\": 4293.913551267325\n          }\n        },\n        {\n          \"id\": \"string\",\n          \"createdAt\": \"2002-05-07T09:45:57.793Z\",\n          \"updatedAt\": \"1974-11-12T14:18:12.899Z\",\n          \"externalId\": \"string\",\n          \"name\": \"string\",\n          \"traits\": {\n            \"key_0\": false\n          }\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b582e052-6c18-41c5-aa28-17f7b8ae62ac",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "100"
+                    },
+                    {
+                      "key": "from",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sortBy",
+                      "value": "updatedAt"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4f225494-89c6-46bc-b64c-fd157414fa86",
+          "name": "Create a user",
+          "request": {
+            "name": "Create a user",
+            "description": {},
+            "url": {
+              "path": [
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"email\": \"<email>\",\n  \"avatar\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 4928,\n    \"key_1\": 3592\n  },\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4334ca1c-dcea-430c-9c82-1405fb8627b0",
+              "name": "The created user",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"email\": \"<email>\",\n  \"avatar\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 7439\n  },\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"createdAt\": \"1997-07-17T06:57:36.692Z\",\n  \"updatedAt\": \"1994-12-15T01:32:12.760Z\",\n  \"externalId\": \"string\",\n  \"email\": \"zUkq@qVlslaYFfcduPQlbCEtkzgkfGDQ.wdzw\",\n  \"avatar\": \"string\",\n  \"traits\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"firstKnown\": \"1954-11-02T06:55:38.011Z\",\n  \"lastSeenTimestamp\": \"1996-03-19T03:26:13.812Z\",\n  \"lastInboundMessageTimestamp\": \"1977-06-24T07:31:28.006Z\",\n  \"lastOutboundMessageTimestamp\": \"1970-05-22T06:22:01.836Z\",\n  \"npsLastScore\": 2798.3990672929904,\n  \"npsLastFeedback\": \"string\",\n  \"npsLastRespondedAt\": \"2013-01-02T10:38:51.766Z\",\n  \"unsubscribedFromConversations\": true,\n  \"unsubscribedFromConversationsAt\": \"1983-07-13T14:05:21.468Z\",\n  \"deactivatedAt\": \"1998-10-06T01:12:42.400Z\",\n  \"permanentlyBounced\": false,\n  \"segments\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"accounts\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"1976-05-14T06:49:01.724Z\",\n      \"updatedAt\": \"1978-04-26T02:29:48.508Z\",\n      \"externalId\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\",\n        \"key_1\": 9796.276203825673\n      },\n      \"organizationId\": \"string\",\n      \"accountOwnerId\": \"string\",\n      \"mrr\": 3725.711500965815,\n      \"nextRenewalDate\": \"2015-10-02T06:00:26.155Z\",\n      \"churnedAt\": \"1974-01-30T21:59:03.314Z\",\n      \"firstSeenTimestamp\": \"2005-11-03T08:24:00.112Z\",\n      \"lastSeenTimestamp\": \"2006-05-11T14:02:46.826Z\",\n      \"lastInboundMessageTimestamp\": \"1960-05-27T06:34:18.193Z\",\n      \"lastOutboundMessageTimestamp\": \"1970-09-16T05:40:03.283Z\",\n      \"trialEndDate\": \"1959-08-05T11:26:26.464Z\",\n      \"usersCount\": 7199,\n      \"npsDetractorCount\": 7230,\n      \"npsPassiveCount\": 9922,\n      \"npsPromoterCount\": 120,\n      \"npsScore\": 6158.663217656054,\n      \"healthScore\": 5011.960342536106,\n      \"csmId\": \"string\",\n      \"accountExecutiveId\": \"string\",\n      \"keyRoles\": [\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        },\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        }\n      ],\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"2009-12-25T14:45:28.575Z\",\n      \"updatedAt\": \"1990-06-23T20:57:48.663Z\",\n      \"externalId\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\",\n        \"key_1\": 7369.872313600328\n      },\n      \"organizationId\": \"string\",\n      \"accountOwnerId\": \"string\",\n      \"mrr\": 4213.862169874505,\n      \"nextRenewalDate\": \"1999-12-21T17:48:57.668Z\",\n      \"churnedAt\": \"1990-08-18T00:04:08.467Z\",\n      \"firstSeenTimestamp\": \"1955-07-06T09:56:32.608Z\",\n      \"lastSeenTimestamp\": \"1992-06-28T10:55:05.067Z\",\n      \"lastInboundMessageTimestamp\": \"1976-12-02T12:27:20.989Z\",\n      \"lastOutboundMessageTimestamp\": \"1969-07-20T02:46:43.992Z\",\n      \"trialEndDate\": \"1986-01-27T11:46:43.419Z\",\n      \"usersCount\": 3173,\n      \"npsDetractorCount\": 2548,\n      \"npsPassiveCount\": 584,\n      \"npsPromoterCount\": 1059,\n      \"npsScore\": 6489.5038471325615,\n      \"healthScore\": 9506.284876435508,\n      \"csmId\": \"string\",\n      \"accountExecutiveId\": \"string\",\n      \"keyRoles\": [\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        },\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        }\n      ],\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"organizations\": [\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"1951-10-15T02:12:53.655Z\",\n      \"updatedAt\": \"1967-05-13T18:36:31.257Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": 2483.9708790243576,\n        \"key_1\": \"string\"\n      },\n      \"key_0\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"2022-05-21T01:05:25.979Z\",\n      \"updatedAt\": \"2014-05-26T07:23:30.095Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\"\n      },\n      \"key_0\": \"string\",\n      \"key_1\": 4783.621067084451,\n      \"key_2\": 8138.233311576495,\n      \"key_3\": false,\n      \"key_4\": 3560.972050337673\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2795113a-7ce9-4709-8e58-a893a85f8459",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"email\": \"<email>\",\n  \"avatar\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 7439\n  },\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3265ffd3-6096-47b2-94c0-1f3f6ad0a0ef",
+          "name": "Get a user",
+          "request": {
+            "name": "Get a user",
+            "description": {},
+            "url": {
+              "path": [
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8b94c57c-1930-4dec-b367-72daa5c1055f",
+              "name": "The user",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"createdAt\": \"1997-07-17T06:57:36.692Z\",\n  \"updatedAt\": \"1994-12-15T01:32:12.760Z\",\n  \"externalId\": \"string\",\n  \"email\": \"zUkq@qVlslaYFfcduPQlbCEtkzgkfGDQ.wdzw\",\n  \"avatar\": \"string\",\n  \"traits\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"firstKnown\": \"1954-11-02T06:55:38.011Z\",\n  \"lastSeenTimestamp\": \"1996-03-19T03:26:13.812Z\",\n  \"lastInboundMessageTimestamp\": \"1977-06-24T07:31:28.006Z\",\n  \"lastOutboundMessageTimestamp\": \"1970-05-22T06:22:01.836Z\",\n  \"npsLastScore\": 2798.3990672929904,\n  \"npsLastFeedback\": \"string\",\n  \"npsLastRespondedAt\": \"2013-01-02T10:38:51.766Z\",\n  \"unsubscribedFromConversations\": true,\n  \"unsubscribedFromConversationsAt\": \"1983-07-13T14:05:21.468Z\",\n  \"deactivatedAt\": \"1998-10-06T01:12:42.400Z\",\n  \"permanentlyBounced\": false,\n  \"segments\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"accounts\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"1976-05-14T06:49:01.724Z\",\n      \"updatedAt\": \"1978-04-26T02:29:48.508Z\",\n      \"externalId\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\",\n        \"key_1\": 9796.276203825673\n      },\n      \"organizationId\": \"string\",\n      \"accountOwnerId\": \"string\",\n      \"mrr\": 3725.711500965815,\n      \"nextRenewalDate\": \"2015-10-02T06:00:26.155Z\",\n      \"churnedAt\": \"1974-01-30T21:59:03.314Z\",\n      \"firstSeenTimestamp\": \"2005-11-03T08:24:00.112Z\",\n      \"lastSeenTimestamp\": \"2006-05-11T14:02:46.826Z\",\n      \"lastInboundMessageTimestamp\": \"1960-05-27T06:34:18.193Z\",\n      \"lastOutboundMessageTimestamp\": \"1970-09-16T05:40:03.283Z\",\n      \"trialEndDate\": \"1959-08-05T11:26:26.464Z\",\n      \"usersCount\": 7199,\n      \"npsDetractorCount\": 7230,\n      \"npsPassiveCount\": 9922,\n      \"npsPromoterCount\": 120,\n      \"npsScore\": 6158.663217656054,\n      \"healthScore\": 5011.960342536106,\n      \"csmId\": \"string\",\n      \"accountExecutiveId\": \"string\",\n      \"keyRoles\": [\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        },\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        }\n      ],\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"2009-12-25T14:45:28.575Z\",\n      \"updatedAt\": \"1990-06-23T20:57:48.663Z\",\n      \"externalId\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\",\n        \"key_1\": 7369.872313600328\n      },\n      \"organizationId\": \"string\",\n      \"accountOwnerId\": \"string\",\n      \"mrr\": 4213.862169874505,\n      \"nextRenewalDate\": \"1999-12-21T17:48:57.668Z\",\n      \"churnedAt\": \"1990-08-18T00:04:08.467Z\",\n      \"firstSeenTimestamp\": \"1955-07-06T09:56:32.608Z\",\n      \"lastSeenTimestamp\": \"1992-06-28T10:55:05.067Z\",\n      \"lastInboundMessageTimestamp\": \"1976-12-02T12:27:20.989Z\",\n      \"lastOutboundMessageTimestamp\": \"1969-07-20T02:46:43.992Z\",\n      \"trialEndDate\": \"1986-01-27T11:46:43.419Z\",\n      \"usersCount\": 3173,\n      \"npsDetractorCount\": 2548,\n      \"npsPassiveCount\": 584,\n      \"npsPromoterCount\": 1059,\n      \"npsScore\": 6489.5038471325615,\n      \"healthScore\": 9506.284876435508,\n      \"csmId\": \"string\",\n      \"accountExecutiveId\": \"string\",\n      \"keyRoles\": [\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        },\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        }\n      ],\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"organizations\": [\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"1951-10-15T02:12:53.655Z\",\n      \"updatedAt\": \"1967-05-13T18:36:31.257Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": 2483.9708790243576,\n        \"key_1\": \"string\"\n      },\n      \"key_0\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"2022-05-21T01:05:25.979Z\",\n      \"updatedAt\": \"2014-05-26T07:23:30.095Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\"\n      },\n      \"key_0\": \"string\",\n      \"key_1\": 4783.621067084451,\n      \"key_2\": 8138.233311576495,\n      \"key_3\": false,\n      \"key_4\": 3560.972050337673\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ed60aba9-820c-4e68-a493-2e84778f4a3d",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15c9081c-8dfd-4602-8c4e-ecf459052008",
+          "name": "Update a user",
+          "request": {
+            "name": "Update a user",
+            "description": {},
+            "url": {
+              "path": [
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                  "type": "any",
+                  "value": "{{subdomain}}",
+                  "key": "subdomain"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"email\": \"<email>\",\n  \"avatar\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 4928,\n    \"key_1\": 3592\n  },\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b101197b-ccb8-476e-a74b-46c74f10c8ea",
+              "name": "The updated user",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"email\": \"<email>\",\n  \"avatar\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 7439\n  },\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"createdAt\": \"1997-07-17T06:57:36.692Z\",\n  \"updatedAt\": \"1994-12-15T01:32:12.760Z\",\n  \"externalId\": \"string\",\n  \"email\": \"zUkq@qVlslaYFfcduPQlbCEtkzgkfGDQ.wdzw\",\n  \"avatar\": \"string\",\n  \"traits\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"firstKnown\": \"1954-11-02T06:55:38.011Z\",\n  \"lastSeenTimestamp\": \"1996-03-19T03:26:13.812Z\",\n  \"lastInboundMessageTimestamp\": \"1977-06-24T07:31:28.006Z\",\n  \"lastOutboundMessageTimestamp\": \"1970-05-22T06:22:01.836Z\",\n  \"npsLastScore\": 2798.3990672929904,\n  \"npsLastFeedback\": \"string\",\n  \"npsLastRespondedAt\": \"2013-01-02T10:38:51.766Z\",\n  \"unsubscribedFromConversations\": true,\n  \"unsubscribedFromConversationsAt\": \"1983-07-13T14:05:21.468Z\",\n  \"deactivatedAt\": \"1998-10-06T01:12:42.400Z\",\n  \"permanentlyBounced\": false,\n  \"segments\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"accounts\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"1976-05-14T06:49:01.724Z\",\n      \"updatedAt\": \"1978-04-26T02:29:48.508Z\",\n      \"externalId\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\",\n        \"key_1\": 9796.276203825673\n      },\n      \"organizationId\": \"string\",\n      \"accountOwnerId\": \"string\",\n      \"mrr\": 3725.711500965815,\n      \"nextRenewalDate\": \"2015-10-02T06:00:26.155Z\",\n      \"churnedAt\": \"1974-01-30T21:59:03.314Z\",\n      \"firstSeenTimestamp\": \"2005-11-03T08:24:00.112Z\",\n      \"lastSeenTimestamp\": \"2006-05-11T14:02:46.826Z\",\n      \"lastInboundMessageTimestamp\": \"1960-05-27T06:34:18.193Z\",\n      \"lastOutboundMessageTimestamp\": \"1970-09-16T05:40:03.283Z\",\n      \"trialEndDate\": \"1959-08-05T11:26:26.464Z\",\n      \"usersCount\": 7199,\n      \"npsDetractorCount\": 7230,\n      \"npsPassiveCount\": 9922,\n      \"npsPromoterCount\": 120,\n      \"npsScore\": 6158.663217656054,\n      \"healthScore\": 5011.960342536106,\n      \"csmId\": \"string\",\n      \"accountExecutiveId\": \"string\",\n      \"keyRoles\": [\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        },\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        }\n      ],\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"createdAt\": \"2009-12-25T14:45:28.575Z\",\n      \"updatedAt\": \"1990-06-23T20:57:48.663Z\",\n      \"externalId\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\",\n        \"key_1\": 7369.872313600328\n      },\n      \"organizationId\": \"string\",\n      \"accountOwnerId\": \"string\",\n      \"mrr\": 4213.862169874505,\n      \"nextRenewalDate\": \"1999-12-21T17:48:57.668Z\",\n      \"churnedAt\": \"1990-08-18T00:04:08.467Z\",\n      \"firstSeenTimestamp\": \"1955-07-06T09:56:32.608Z\",\n      \"lastSeenTimestamp\": \"1992-06-28T10:55:05.067Z\",\n      \"lastInboundMessageTimestamp\": \"1976-12-02T12:27:20.989Z\",\n      \"lastOutboundMessageTimestamp\": \"1969-07-20T02:46:43.992Z\",\n      \"trialEndDate\": \"1986-01-27T11:46:43.419Z\",\n      \"usersCount\": 3173,\n      \"npsDetractorCount\": 2548,\n      \"npsPassiveCount\": 584,\n      \"npsPromoterCount\": 1059,\n      \"npsScore\": 6489.5038471325615,\n      \"healthScore\": 9506.284876435508,\n      \"csmId\": \"string\",\n      \"accountExecutiveId\": \"string\",\n      \"keyRoles\": [\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        },\n        {\n          \"vitallyUser\": {},\n          \"keyRole\": \"string\"\n        }\n      ],\n      \"segments\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"organizations\": [\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"1951-10-15T02:12:53.655Z\",\n      \"updatedAt\": \"1967-05-13T18:36:31.257Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": 2483.9708790243576,\n        \"key_1\": \"string\"\n      },\n      \"key_0\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"2022-05-21T01:05:25.979Z\",\n      \"updatedAt\": \"2014-05-26T07:23:30.095Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\"\n      },\n      \"key_0\": \"string\",\n      \"key_1\": 4783.621067084451,\n      \"key_2\": 8138.233311576495,\n      \"key_3\": false,\n      \"key_4\": 3560.972050337673\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c591a55f-7ab0-467b-8828-2be85f1762fc",
+              "name": "Unauthorized - there is an issue with the authorization used",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+                      "type": "any",
+                      "value": "{{subdomain}}",
+                      "key": "subdomain"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"email\": \"<email>\",\n  \"avatar\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 7439\n  },\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "yoursubdomain",
+      "key": "subdomain"
+    },
+    {
+      "type": "string",
+      "value": "https://{{subdomain}}.rest.vitally.io/resources",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "65cdf15e-23bd-4cbd-b9a2-7bba4995db83",
+    "name": "Vitally REST Accounts Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Vitally's public REST API for creating, updating, retrieving and listing the core Customer Success objects — Accounts, Organizations, Users, Tasks, Notes, Conversations and NPS Responses. Authentication is HTTP Basic using a Vitally REST API key as the username. List endpoints use cursor-based pagination ordered by updatedAt (default) or createdAt.\n\nContact Support:\n Name: Vitally",
+      "type": "text/plain"
+    }
+  }
+}

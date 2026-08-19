@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Vitally REST Accounts Admins API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admins",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List admins (team members)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{subdomain}.rest.vitally.io/resources/admins",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to return. Max/default is 100."
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "The cursor returned from a previous request (from the next property)."
+              }
+            ]
+          },
+          "docs": "List admins (team members)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
