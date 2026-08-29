@@ -25,6 +25,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "vitally-accounts-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "vitally-admins-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "vitally-conversations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "vitally-custom-objects-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "vitally-notes-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "vitally-nps-responses-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "vitally-organizations-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "vitally-tasks-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "vitally-users-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }

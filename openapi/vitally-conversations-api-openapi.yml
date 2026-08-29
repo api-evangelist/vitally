@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Vitally REST Accounts Conversations API
   version: '1.0'
@@ -64,29 +64,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    Cursor:
-      type: object
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          description: The cursor to use for the following page, or null at the end.
-    GenericWrite:
-      type: object
-      properties:
-        externalId:
-          type: string
-        name:
-          type: string
-        accountId:
-          type: string
-        organizationId:
-          type: string
-        traits:
-          type: object
-          additionalProperties: true
-      additionalProperties: true
     Error:
       type: object
       properties:
@@ -119,6 +96,29 @@ components:
           type: object
           additionalProperties: true
       additionalProperties: true
+    Cursor:
+      type: object
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          description: The cursor to use for the following page, or null at the end.
+    GenericWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        name:
+          type: string
+        accountId:
+          type: string
+        organizationId:
+          type: string
+        traits:
+          type: object
+          additionalProperties: true
+      additionalProperties: true
     ObjectList:
       allOf:
       - $ref: '#/components/schemas/Cursor'
@@ -128,7 +128,24 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/GenericObject'
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
+    sortBy:
+      name: sortBy
+      in: query
+      description: How to order results. Default updatedAt.
+      schema:
+        type: string
+        enum:
+        - createdAt
+        - updatedAt
+        default: updatedAt
     from:
       name: from
       in: query
@@ -143,23 +160,6 @@ components:
         type: integer
         maximum: 100
         default: 100
-    sortBy:
-      name: sortBy
-      in: query
-      description: How to order results. Default updatedAt.
-      schema:
-        type: string
-        enum:
-        - createdAt
-        - updatedAt
-        default: updatedAt
-  responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     basicAuth:
       type: http

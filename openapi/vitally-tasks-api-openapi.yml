@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Vitally REST Accounts Tasks API
   version: '1.0'
@@ -117,14 +117,21 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    Cursor:
+    SegmentRef:
       type: object
       properties:
-        next:
-          type:
-          - string
-          - 'null'
-          description: The cursor to use for the following page, or null at the end.
+        id:
+          type: string
+        name:
+          type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Human-readable error message.
+      required:
+      - error
     TaskWrite:
       type: object
       properties:
@@ -157,6 +164,23 @@ components:
       required:
       - name
       - accountId
+    TaskList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/Task'
+    Cursor:
+      type: object
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          description: The cursor to use for the following page, or null at the end.
     TaskCategory:
       type: object
       properties:
@@ -170,14 +194,6 @@ components:
           format: date-time
         name:
           type: string
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Human-readable error message.
-      required:
-      - error
     Task:
       type: object
       properties:
@@ -255,29 +271,20 @@ components:
       - id
       - name
       - accountId
-    SegmentRef:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    TaskList:
-      allOf:
-      - $ref: '#/components/schemas/Cursor'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/Task'
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad Request - the body of the request needs to be reviewed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
     sortBy:
       name: sortBy
       in: query
@@ -296,19 +303,12 @@ components:
         type: integer
         maximum: 100
         default: 100
-  responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad Request - the body of the request needs to be reviewed
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
   securitySchemes:
     basicAuth:
       type: http
