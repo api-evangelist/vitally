@@ -151,6 +151,67 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  parameters:
+    accountId:
+      name: accountId
+      in: path
+      required: true
+      schema:
+        type: string
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
+    sortBy:
+      name: sortBy
+      in: query
+      description: How to order results. Default updatedAt.
+      schema:
+        type: string
+        enum:
+        - createdAt
+        - updatedAt
+        default: updatedAt
+    limit:
+      name: limit
+      in: query
+      description: Number of items to return. Max/default is 100.
+      schema:
+        type: integer
+        maximum: 100
+        default: 100
+  responses:
+    TooManyRequests:
+      description: Too Many Requests - rate limit exceeded (default 1000 requests/min)
+      headers:
+        RateLimit-Limit:
+          schema:
+            type: string
+          description: e.g. 1000, 1000;window=60
+        RateLimit-Remaining:
+          schema:
+            type: integer
+        RateLimit-Reset:
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad Request - the body of the request needs to be reviewed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
     SegmentRef:
       type: object
@@ -167,6 +228,14 @@ components:
           description: Human-readable error message.
       required:
       - error
+    Cursor:
+      type: object
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          description: The cursor to use for the following page, or null at the end.
     AccountWrite:
       type: object
       properties:
@@ -187,14 +256,6 @@ components:
           additionalProperties: true
       required:
       - name
-    Cursor:
-      type: object
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          description: The cursor to use for the following page, or null at the end.
     Account:
       type: object
       properties:
@@ -313,67 +374,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Account'
-  responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad Request - the body of the request needs to be reviewed
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    TooManyRequests:
-      description: Too Many Requests - rate limit exceeded (default 1000 requests/min)
-      headers:
-        RateLimit-Limit:
-          schema:
-            type: string
-          description: e.g. 1000, 1000;window=60
-        RateLimit-Remaining:
-          schema:
-            type: integer
-        RateLimit-Reset:
-          schema:
-            type: integer
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-  parameters:
-    accountId:
-      name: accountId
-      in: path
-      required: true
-      schema:
-        type: string
-    sortBy:
-      name: sortBy
-      in: query
-      description: How to order results. Default updatedAt.
-      schema:
-        type: string
-        enum:
-        - createdAt
-        - updatedAt
-        default: updatedAt
-    limit:
-      name: limit
-      in: query
-      description: Number of items to return. Max/default is 100.
-      schema:
-        type: integer
-        maximum: 100
-        default: 100
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
   securitySchemes:
     basicAuth:
       type: http

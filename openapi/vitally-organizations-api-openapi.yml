@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Vitally REST Accounts Organizations API
+  title: Vitally REST Organizations API
   version: '1.0'
   x-generated: '2026-07-21'
   x-method: generated
@@ -105,6 +105,30 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    GenericWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        name:
+          type: string
+        accountId:
+          type: string
+        organizationId:
+          type: string
+        traits:
+          type: object
+          additionalProperties: true
+      additionalProperties: true
+    ObjectList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/GenericObject'
     Error:
       type: object
       properties:
@@ -145,30 +169,6 @@ components:
           - string
           - 'null'
           description: The cursor to use for the following page, or null at the end.
-    GenericWrite:
-      type: object
-      properties:
-        externalId:
-          type: string
-        name:
-          type: string
-        accountId:
-          type: string
-        organizationId:
-          type: string
-        traits:
-          type: object
-          additionalProperties: true
-      additionalProperties: true
-    ObjectList:
-      allOf:
-      - $ref: '#/components/schemas/Cursor'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/GenericObject'
   responses:
     Unauthorized:
       description: Unauthorized - there is an issue with the authorization used
@@ -177,6 +177,12 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   parameters:
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
     sortBy:
       name: sortBy
       in: query
@@ -187,12 +193,6 @@ components:
         - createdAt
         - updatedAt
         default: updatedAt
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
     limit:
       name: limit
       in: query

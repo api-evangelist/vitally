@@ -1,0 +1,31 @@
+# Front Door AI Index — vitally — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: vitally
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: vitally.io
+  final_host: www.vitally.io
+  ownership: own
+  owner: vitally
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 24
+  host_score: 24
+  density: 14.49
+  words: 1656
+  tiers:
+    agentic: 8
+    core: 15
+    model: 1
+  ambiguous: 4
+  top_terms:
+    AI: 15
+    automation: 4
+    copilot: 3
+    agentic: 2
+    prompts: 2
+    Claude: 1
+    MCP: 1

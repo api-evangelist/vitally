@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Vitally REST Accounts Tasks API
+  title: Vitally REST Tasks API
   version: '1.0'
   x-generated: '2026-07-21'
   x-method: generated
@@ -117,70 +117,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    SegmentRef:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Human-readable error message.
-      required:
-      - error
-    TaskWrite:
-      type: object
-      properties:
-        externalId:
-          type: string
-        organizationId:
-          type: string
-        accountId:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        dueDate:
-          type: string
-        completedAt:
-          type: string
-          format: date-time
-        assignedToId:
-          type: string
-        completedById:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-        traits:
-          type: object
-          additionalProperties: true
-      required:
-      - name
-      - accountId
-    TaskList:
-      allOf:
-      - $ref: '#/components/schemas/Cursor'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/Task'
-    Cursor:
-      type: object
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          description: The cursor to use for the following page, or null at the end.
     TaskCategory:
       type: object
       properties:
@@ -192,6 +128,13 @@ components:
         updatedAt:
           type: string
           format: date-time
+        name:
+          type: string
+    SegmentRef:
+      type: object
+      properties:
+        id:
+          type: string
         name:
           type: string
     Task:
@@ -271,6 +214,63 @@ components:
       - id
       - name
       - accountId
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Human-readable error message.
+      required:
+      - error
+    Cursor:
+      type: object
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          description: The cursor to use for the following page, or null at the end.
+    TaskWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        organizationId:
+          type: string
+        accountId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        dueDate:
+          type: string
+        completedAt:
+          type: string
+          format: date-time
+        assignedToId:
+          type: string
+        completedById:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        traits:
+          type: object
+          additionalProperties: true
+      required:
+      - name
+      - accountId
+    TaskList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/Task'
   responses:
     Unauthorized:
       description: Unauthorized - there is an issue with the authorization used
@@ -285,6 +285,12 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   parameters:
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
     sortBy:
       name: sortBy
       in: query
@@ -303,12 +309,6 @@ components:
         type: integer
         maximum: 100
         default: 100
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
   securitySchemes:
     basicAuth:
       type: http

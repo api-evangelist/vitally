@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Vitally REST Accounts Custom Objects API
+  title: Vitally REST Custom Objects API
   version: '1.0'
   x-generated: '2026-07-21'
   x-method: generated
@@ -63,6 +63,30 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    GenericWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        name:
+          type: string
+        accountId:
+          type: string
+        organizationId:
+          type: string
+        traits:
+          type: object
+          additionalProperties: true
+      additionalProperties: true
+    ObjectList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/GenericObject'
     Error:
       type: object
       properties:
@@ -103,30 +127,6 @@ components:
           - string
           - 'null'
           description: The cursor to use for the following page, or null at the end.
-    GenericWrite:
-      type: object
-      properties:
-        externalId:
-          type: string
-        name:
-          type: string
-        accountId:
-          type: string
-        organizationId:
-          type: string
-        traits:
-          type: object
-          additionalProperties: true
-      additionalProperties: true
-    ObjectList:
-      allOf:
-      - $ref: '#/components/schemas/Cursor'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/GenericObject'
   responses:
     Unauthorized:
       description: Unauthorized - there is an issue with the authorization used

@@ -1,16 +1,19 @@
-generated: '2026-07-21'
+generated: '2026-09-19'
 method: searched
-description: >-
-  Probe of the /.well-known/ discovery surface across Vitally's public hosts.
-  None of the standard discovery documents are published (all 404). Recorded for
-  auditability; no WellKnown catalog pointer is emitted because nothing was found.
+description: Probe of the /.well-known/ discovery surface across Vitally's public hosts. None of the standard
+  discovery documents are published (all 404). Recorded for auditability; no WellKnown catalog pointer
+  is emitted because nothing was found.
 hosts_probed:
-  - https://rest.vitally.io
-  - https://api.vitally.io
-  - https://vitally.io
-  - https://www.vitally.io
-  - https://docs.vitally.io
-documents:
+- https://rest.vitally.io
+- https://api.vitally.io
+- https://vitally.io
+- https://www.vitally.io
+- https://docs.vitally.io
+notes: The Vitally MCP server uses OAuth but does not expose a public /.well-known/oauth-authorization-server
+  on the probed hosts (the flow uses dynamic client registration initiated by the MCP client at mcp.vitally.io).
+hosts:
+- host: ''
+  documents:
   - path: /.well-known/security.txt
     status: 404
   - path: /.well-known/openid-configuration
@@ -21,7 +24,35 @@ documents:
     status: 404
   - path: /.well-known/ai-plugin.json
     status: 404
-notes: >-
-  The Vitally MCP server uses OAuth but does not expose a public
-  /.well-known/oauth-authorization-server on the probed hosts (the flow uses
-  dynamic client registration initiated by the MCP client at mcp.vitally.io).
+- host: https://mcp.vitally.io
+  documents:
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: vitally-mcp-oauth-protected-resource.json
+    bytes: 198
+  - path: /.well-known/oauth-authorization-server/mcp/v0
+    status: 200
+    file: vitally-mcp-oauth-authorization-server.json
+    bytes: 561
+  path_echo_control: passed
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
+x-mcp-probe:
+  probed: '2026-09-19'
+  issue: roadmap#321, roadmap#337
+  documents:
+  - host: https://mcp.vitally.io
+    path: /.well-known/oauth-protected-resource
+    file: vitally-mcp-oauth-protected-resource.json
+  - host: https://mcp.vitally.io
+    path: /.well-known/oauth-authorization-server/mcp/v0
+    file: vitally-mcp-oauth-authorization-server.json
+  validated_on: resource (RFC 9728) / issuer (RFC 8414, OIDC)
+  negative_control: one per host; a 2xx JSON object at an impossible path discards the host
+note: 'MCP-host OAuth discovery added 2026-09-19 (roadmap#321/#337): the harvest visits a provider''s
+  primary hosts, and RFC 9728 protected-resource metadata lives on the MCP host, so these documents existed
+  and were invisible to the scorer. Fetched live and validated on `resource`/`issuer`; one negative control
+  per host.'

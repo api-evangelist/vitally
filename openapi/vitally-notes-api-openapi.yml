@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Vitally REST Accounts Notes API
+  title: Vitally REST Notes API
   version: '1.0'
   x-generated: '2026-07-21'
   x-method: generated
@@ -96,7 +96,29 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad Request - the body of the request needs to be reviewed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
+    ObjectList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/GenericObject'
     NoteWrite:
       type: object
       properties:
@@ -158,29 +180,13 @@ components:
           - string
           - 'null'
           description: The cursor to use for the following page, or null at the end.
-    ObjectList:
-      allOf:
-      - $ref: '#/components/schemas/Cursor'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/GenericObject'
-  responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad Request - the body of the request needs to be reviewed
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   parameters:
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
     sortBy:
       name: sortBy
       in: query
@@ -199,12 +205,6 @@ components:
         type: integer
         maximum: 100
         default: 100
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
   securitySchemes:
     basicAuth:
       type: http

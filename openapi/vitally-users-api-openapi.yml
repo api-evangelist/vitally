@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Vitally REST Accounts Users API
+  title: Vitally REST Users API
   version: '1.0'
   x-generated: '2026-07-21'
   x-method: generated
@@ -124,6 +124,13 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
     SegmentRef:
       type: object
@@ -132,15 +139,93 @@ components:
           type: string
         name:
           type: string
-    UserList:
-      allOf:
-      - $ref: '#/components/schemas/Cursor'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/User'
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        externalId:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        avatar:
+          type:
+          - string
+          - 'null'
+        traits:
+          type: object
+          additionalProperties: true
+        firstKnown:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSeenTimestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastInboundMessageTimestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastOutboundMessageTimestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        npsLastScore:
+          type:
+          - number
+          - 'null'
+        npsLastFeedback:
+          type:
+          - string
+          - 'null'
+        npsLastRespondedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        unsubscribedFromConversations:
+          type: boolean
+        unsubscribedFromConversationsAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        deactivatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        permanentlyBounced:
+          type: boolean
+        segments:
+          type: array
+          items:
+            $ref: '#/components/schemas/SegmentRef'
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        organizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      required:
+      - id
+      - name
     Error:
       type: object
       properties:
@@ -149,6 +234,27 @@ components:
           description: Human-readable error message.
       required:
       - error
+    UserWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        avatar:
+          type: string
+        traits:
+          type: object
+          additionalProperties: true
+        accountIds:
+          type: array
+          items:
+            type: string
+      required:
+      - name
     GenericObject:
       type: object
       description: Common Vitally object envelope. Every REST object exposes id, createdAt, updatedAt, externalId, name and a traits map; resource-specific fields are documented per resource.
@@ -173,6 +279,15 @@ components:
           type: object
           additionalProperties: true
       additionalProperties: true
+    UserList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
     Cursor:
       type: object
       properties:
@@ -181,27 +296,6 @@ components:
           - string
           - 'null'
           description: The cursor to use for the following page, or null at the end.
-    UserWrite:
-      type: object
-      properties:
-        externalId:
-          type: string
-        name:
-          type: string
-        email:
-          type: string
-          format: email
-        avatar:
-          type: string
-        traits:
-          type: object
-          additionalProperties: true
-        accountIds:
-          type: array
-          items:
-            type: string
-      required:
-      - name
     Account:
       type: object
       properties:
@@ -311,105 +405,11 @@ components:
       required:
       - id
       - name
-    User:
-      type: object
-      properties:
-        id:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        externalId:
-          type: string
-        name:
-          type: string
-        email:
-          type: string
-          format: email
-        avatar:
-          type:
-          - string
-          - 'null'
-        traits:
-          type: object
-          additionalProperties: true
-        firstKnown:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSeenTimestamp:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastInboundMessageTimestamp:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastOutboundMessageTimestamp:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        npsLastScore:
-          type:
-          - number
-          - 'null'
-        npsLastFeedback:
-          type:
-          - string
-          - 'null'
-        npsLastRespondedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        unsubscribedFromConversations:
-          type: boolean
-        unsubscribedFromConversationsAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        deactivatedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        permanentlyBounced:
-          type: boolean
-        segments:
-          type: array
-          items:
-            $ref: '#/components/schemas/SegmentRef'
-        accounts:
-          type: array
-          items:
-            $ref: '#/components/schemas/Account'
-        organizations:
-          type: array
-          items:
-            $ref: '#/components/schemas/GenericObject'
-      required:
-      - id
-      - name
-  responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   parameters:
-    accountId:
-      name: accountId
-      in: path
-      required: true
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
       schema:
         type: string
     sortBy:
@@ -422,12 +422,6 @@ components:
         - createdAt
         - updatedAt
         default: updatedAt
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
     limit:
       name: limit
       in: query
@@ -436,6 +430,12 @@ components:
         type: integer
         maximum: 100
         default: 100
+    accountId:
+      name: accountId
+      in: path
+      required: true
+      schema:
+        type: string
   securitySchemes:
     basicAuth:
       type: http

@@ -1,0 +1,1 @@
+{"resource":"https://mcp.vitally.io/mcp/v0","authorization_servers":["https://mcp.vitally.io/mcp/v0"],"scopes_supported":["user.info","data.read","data.write"],"bearer_methods_supported":["header"]}
