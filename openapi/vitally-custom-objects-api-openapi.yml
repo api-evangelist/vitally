@@ -63,21 +63,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    GenericWrite:
-      type: object
-      properties:
-        externalId:
-          type: string
-        name:
-          type: string
-        accountId:
-          type: string
-        organizationId:
-          type: string
-        traits:
-          type: object
-          additionalProperties: true
-      additionalProperties: true
     ObjectList:
       allOf:
       - $ref: '#/components/schemas/Cursor'
@@ -119,6 +104,21 @@ components:
           type: object
           additionalProperties: true
       additionalProperties: true
+    GenericWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        name:
+          type: string
+        accountId:
+          type: string
+        organizationId:
+          type: string
+        traits:
+          type: object
+          additionalProperties: true
+      additionalProperties: true
     Cursor:
       type: object
       properties:
@@ -127,20 +127,7 @@ components:
           - string
           - 'null'
           description: The cursor to use for the following page, or null at the end.
-  responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   parameters:
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
     limit:
       name: limit
       in: query
@@ -149,6 +136,19 @@ components:
         type: integer
         maximum: 100
         default: 100
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     basicAuth:
       type: http

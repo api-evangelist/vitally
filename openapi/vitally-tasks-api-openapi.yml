@@ -117,26 +117,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    TaskCategory:
-      type: object
-      properties:
-        id:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-    SegmentRef:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
     Task:
       type: object
       properties:
@@ -214,6 +194,15 @@ components:
       - id
       - name
       - accountId
+    TaskList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/Task'
     Error:
       type: object
       properties:
@@ -222,6 +211,19 @@ components:
           description: Human-readable error message.
       required:
       - error
+    TaskCategory:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        name:
+          type: string
     Cursor:
       type: object
       properties:
@@ -262,35 +264,35 @@ components:
       required:
       - name
       - accountId
-    TaskList:
-      allOf:
-      - $ref: '#/components/schemas/Cursor'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/Task'
+    SegmentRef:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
   responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     BadRequest:
       description: Bad Request - the body of the request needs to be reviewed
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
-    from:
-      name: from
+    limit:
+      name: limit
       in: query
-      description: The cursor returned from a previous request (from the next property).
+      description: Number of items to return. Max/default is 100.
       schema:
-        type: string
+        type: integer
+        maximum: 100
+        default: 100
     sortBy:
       name: sortBy
       in: query
@@ -301,14 +303,12 @@ components:
         - createdAt
         - updatedAt
         default: updatedAt
-    limit:
-      name: limit
+    from:
+      name: from
       in: query
-      description: Number of items to return. Max/default is 100.
+      description: The cursor returned from a previous request (from the next property).
       schema:
-        type: integer
-        maximum: 100
-        default: 100
+        type: string
   securitySchemes:
     basicAuth:
       type: http

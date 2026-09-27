@@ -105,21 +105,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    GenericWrite:
-      type: object
-      properties:
-        externalId:
-          type: string
-        name:
-          type: string
-        accountId:
-          type: string
-        organizationId:
-          type: string
-        traits:
-          type: object
-          additionalProperties: true
-      additionalProperties: true
     ObjectList:
       allOf:
       - $ref: '#/components/schemas/Cursor'
@@ -161,6 +146,21 @@ components:
           type: object
           additionalProperties: true
       additionalProperties: true
+    GenericWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        name:
+          type: string
+        accountId:
+          type: string
+        organizationId:
+          type: string
+        traits:
+          type: object
+          additionalProperties: true
+      additionalProperties: true
     Cursor:
       type: object
       properties:
@@ -177,12 +177,14 @@ components:
           schema:
             $ref: '#/components/schemas/Error'
   parameters:
-    from:
-      name: from
+    limit:
+      name: limit
       in: query
-      description: The cursor returned from a previous request (from the next property).
+      description: Number of items to return. Max/default is 100.
       schema:
-        type: string
+        type: integer
+        maximum: 100
+        default: 100
     sortBy:
       name: sortBy
       in: query
@@ -193,14 +195,12 @@ components:
         - createdAt
         - updatedAt
         default: updatedAt
-    limit:
-      name: limit
+    from:
+      name: from
       in: query
-      description: Number of items to return. Max/default is 100.
+      description: The cursor returned from a previous request (from the next property).
       schema:
-        type: integer
-        maximum: 100
-        default: 100
+        type: string
   securitySchemes:
     basicAuth:
       type: http

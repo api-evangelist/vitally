@@ -124,21 +124,7 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
-    SegmentRef:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
     User:
       type: object
       properties:
@@ -226,6 +212,13 @@ components:
       required:
       - id
       - name
+    SegmentRef:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
     Error:
       type: object
       properties:
@@ -234,27 +227,6 @@ components:
           description: Human-readable error message.
       required:
       - error
-    UserWrite:
-      type: object
-      properties:
-        externalId:
-          type: string
-        name:
-          type: string
-        email:
-          type: string
-          format: email
-        avatar:
-          type: string
-        traits:
-          type: object
-          additionalProperties: true
-        accountIds:
-          type: array
-          items:
-            type: string
-      required:
-      - name
     GenericObject:
       type: object
       description: Common Vitally object envelope. Every REST object exposes id, createdAt, updatedAt, externalId, name and a traits map; resource-specific fields are documented per resource.
@@ -288,14 +260,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/User'
-    Cursor:
-      type: object
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          description: The cursor to use for the following page, or null at the end.
     Account:
       type: object
       properties:
@@ -405,13 +369,50 @@ components:
       required:
       - id
       - name
+    Cursor:
+      type: object
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          description: The cursor to use for the following page, or null at the end.
+    UserWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        avatar:
+          type: string
+        traits:
+          type: object
+          additionalProperties: true
+        accountIds:
+          type: array
+          items:
+            type: string
+      required:
+      - name
   parameters:
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
+    accountId:
+      name: accountId
+      in: path
+      required: true
       schema:
         type: string
+    limit:
+      name: limit
+      in: query
+      description: Number of items to return. Max/default is 100.
+      schema:
+        type: integer
+        maximum: 100
+        default: 100
     sortBy:
       name: sortBy
       in: query
@@ -422,20 +423,19 @@ components:
         - createdAt
         - updatedAt
         default: updatedAt
-    limit:
-      name: limit
+    from:
+      name: from
       in: query
-      description: Number of items to return. Max/default is 100.
-      schema:
-        type: integer
-        maximum: 100
-        default: 100
-    accountId:
-      name: accountId
-      in: path
-      required: true
+      description: The cursor returned from a previous request (from the next property).
       schema:
         type: string
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     basicAuth:
       type: http
