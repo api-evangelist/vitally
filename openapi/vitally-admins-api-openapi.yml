@@ -42,6 +42,13 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
     ObjectList:
       allOf:
@@ -52,14 +59,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/GenericObject'
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Human-readable error message.
-      required:
-      - error
     GenericObject:
       type: object
       description: Common Vitally object envelope. Every REST object exposes id, createdAt, updatedAt, externalId, name and a traits map; resource-specific fields are documented per resource.
@@ -92,6 +91,14 @@ components:
           - string
           - 'null'
           description: The cursor to use for the following page, or null at the end.
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Human-readable error message.
+      required:
+      - error
   parameters:
     limit:
       name: limit
@@ -107,13 +114,6 @@ components:
       description: The cursor returned from a previous request (from the next property).
       schema:
         type: string
-  responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     basicAuth:
       type: http

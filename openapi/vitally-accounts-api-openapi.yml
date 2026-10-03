@@ -151,6 +151,67 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    TooManyRequests:
+      description: Too Many Requests - rate limit exceeded (default 1000 requests/min)
+      headers:
+        RateLimit-Limit:
+          schema:
+            type: string
+          description: e.g. 1000, 1000;window=60
+        RateLimit-Remaining:
+          schema:
+            type: integer
+        RateLimit-Reset:
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad Request - the body of the request needs to be reviewed
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  parameters:
+    limit:
+      name: limit
+      in: query
+      description: Number of items to return. Max/default is 100.
+      schema:
+        type: integer
+        maximum: 100
+        default: 100
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
+    accountId:
+      name: accountId
+      in: path
+      required: true
+      schema:
+        type: string
+    sortBy:
+      name: sortBy
+      in: query
+      description: How to order results. Default updatedAt.
+      schema:
+        type: string
+        enum:
+        - createdAt
+        - updatedAt
+        default: updatedAt
   schemas:
     AccountWrite:
       type: object
@@ -172,14 +233,6 @@ components:
           additionalProperties: true
       required:
       - name
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Human-readable error message.
-      required:
-      - error
     AccountList:
       allOf:
       - $ref: '#/components/schemas/Cursor'
@@ -298,6 +351,13 @@ components:
       required:
       - id
       - name
+    SegmentRef:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
     Cursor:
       type: object
       properties:
@@ -306,74 +366,14 @@ components:
           - string
           - 'null'
           description: The cursor to use for the following page, or null at the end.
-    SegmentRef:
+    Error:
       type: object
       properties:
-        id:
+        error:
           type: string
-        name:
-          type: string
-  parameters:
-    accountId:
-      name: accountId
-      in: path
-      required: true
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      description: Number of items to return. Max/default is 100.
-      schema:
-        type: integer
-        maximum: 100
-        default: 100
-    sortBy:
-      name: sortBy
-      in: query
-      description: How to order results. Default updatedAt.
-      schema:
-        type: string
-        enum:
-        - createdAt
-        - updatedAt
-        default: updatedAt
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
-  responses:
-    BadRequest:
-      description: Bad Request - the body of the request needs to be reviewed
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    TooManyRequests:
-      description: Too Many Requests - rate limit exceeded (default 1000 requests/min)
-      headers:
-        RateLimit-Limit:
-          schema:
-            type: string
-          description: e.g. 1000, 1000;window=60
-        RateLimit-Remaining:
-          schema:
-            type: integer
-        RateLimit-Reset:
-          schema:
-            type: integer
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+          description: Human-readable error message.
+      required:
+      - error
   securitySchemes:
     basicAuth:
       type: http

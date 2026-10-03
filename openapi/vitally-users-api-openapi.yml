@@ -125,6 +125,15 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    UserList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
     User:
       type: object
       properties:
@@ -212,54 +221,27 @@ components:
       required:
       - id
       - name
-    SegmentRef:
+    UserWrite:
       type: object
       properties:
-        id:
-          type: string
-        name:
-          type: string
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Human-readable error message.
-      required:
-      - error
-    GenericObject:
-      type: object
-      description: Common Vitally object envelope. Every REST object exposes id, createdAt, updatedAt, externalId, name and a traits map; resource-specific fields are documented per resource.
-      properties:
-        id:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
         externalId:
-          type:
-          - string
-          - 'null'
+          type: string
         name:
-          type:
-          - string
-          - 'null'
+          type: string
+        email:
+          type: string
+          format: email
+        avatar:
+          type: string
         traits:
           type: object
           additionalProperties: true
-      additionalProperties: true
-    UserList:
-      allOf:
-      - $ref: '#/components/schemas/Cursor'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/User'
+        accountIds:
+          type: array
+          items:
+            type: string
+      required:
+      - name
     Account:
       type: object
       properties:
@@ -369,6 +351,37 @@ components:
       required:
       - id
       - name
+    SegmentRef:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    GenericObject:
+      type: object
+      description: Common Vitally object envelope. Every REST object exposes id, createdAt, updatedAt, externalId, name and a traits map; resource-specific fields are documented per resource.
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        externalId:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        traits:
+          type: object
+          additionalProperties: true
+      additionalProperties: true
     Cursor:
       type: object
       properties:
@@ -377,34 +390,22 @@ components:
           - string
           - 'null'
           description: The cursor to use for the following page, or null at the end.
-    UserWrite:
+    Error:
       type: object
       properties:
-        externalId:
+        error:
           type: string
-        name:
-          type: string
-        email:
-          type: string
-          format: email
-        avatar:
-          type: string
-        traits:
-          type: object
-          additionalProperties: true
-        accountIds:
-          type: array
-          items:
-            type: string
+          description: Human-readable error message.
       required:
-      - name
+      - error
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
-    accountId:
-      name: accountId
-      in: path
-      required: true
-      schema:
-        type: string
     limit:
       name: limit
       in: query
@@ -413,6 +414,18 @@ components:
         type: integer
         maximum: 100
         default: 100
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
+    accountId:
+      name: accountId
+      in: path
+      required: true
+      schema:
+        type: string
     sortBy:
       name: sortBy
       in: query
@@ -423,19 +436,6 @@ components:
         - createdAt
         - updatedAt
         default: updatedAt
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
-  responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     basicAuth:
       type: http

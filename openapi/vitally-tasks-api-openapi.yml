@@ -117,6 +117,60 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    TaskList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/Task'
+    TaskCategory:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+    TaskWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        organizationId:
+          type: string
+        accountId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        dueDate:
+          type: string
+        completedAt:
+          type: string
+          format: date-time
+        assignedToId:
+          type: string
+        completedById:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        traits:
+          type: object
+          additionalProperties: true
+      required:
+      - name
+      - accountId
     Task:
       type: object
       properties:
@@ -194,34 +248,11 @@ components:
       - id
       - name
       - accountId
-    TaskList:
-      allOf:
-      - $ref: '#/components/schemas/Cursor'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/Task'
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Human-readable error message.
-      required:
-      - error
-    TaskCategory:
+    SegmentRef:
       type: object
       properties:
         id:
           type: string
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
         name:
           type: string
     Cursor:
@@ -232,54 +263,23 @@ components:
           - string
           - 'null'
           description: The cursor to use for the following page, or null at the end.
-    TaskWrite:
+    Error:
       type: object
       properties:
-        externalId:
+        error:
           type: string
-        organizationId:
-          type: string
-        accountId:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        dueDate:
-          type: string
-        completedAt:
-          type: string
-          format: date-time
-        assignedToId:
-          type: string
-        completedById:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-        traits:
-          type: object
-          additionalProperties: true
+          description: Human-readable error message.
       required:
-      - name
-      - accountId
-    SegmentRef:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
+      - error
   responses:
-    BadRequest:
-      description: Bad Request - the body of the request needs to be reviewed
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
+    BadRequest:
+      description: Bad Request - the body of the request needs to be reviewed
       content:
         application/json:
           schema:
@@ -293,6 +293,12 @@ components:
         type: integer
         maximum: 100
         default: 100
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
     sortBy:
       name: sortBy
       in: query
@@ -303,12 +309,6 @@ components:
         - createdAt
         - updatedAt
         default: updatedAt
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
   securitySchemes:
     basicAuth:
       type: http
