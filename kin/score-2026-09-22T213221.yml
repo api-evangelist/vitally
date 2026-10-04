@@ -1,21 +1,19 @@
-# Kin Score artifact — vitally — 2026-08-25T154045
+# Kin Score artifact — vitally — 2026-09-22T213221
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: vitally
-  schema_version: 0.14.0
-  scored_at: '2026-08-25'
-  run_ts: 2026-08-25T154045
-  composite: 60.9
-  band: strong
+  schema_version: 0.22.0
+  scored_at: '2026-09-22'
+  run_ts: 2026-09-22T213221
+  composite: 51.2
+  band: developing
   facets:
     discoverability: 81.5
-    contract_quality: 65.8
-    governance: 30.3
+    contract_quality: 24.4
+    contract_governance: 18.2
     operational_transparency: 71.1
     developer_ergonomics: 56.5
-    commercial_clarity: 60.5
-    contract_governance: 30.3
     access_clarity: 60.5
   agent_readiness:
     score: 39.0
@@ -47,7 +45,7 @@ kin_score:
     agentic_access: derived
     conformance: first-party
     contracts:
-      total: 9
-      derived: 0
-      coverage: 0.0
+      total: 10
+      derived: 10
+      coverage: 100.0
       callable: 100.0
