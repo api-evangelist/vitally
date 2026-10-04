@@ -126,51 +126,14 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/Task'
-    TaskCategory:
+    Cursor:
       type: object
       properties:
-        id:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-    TaskWrite:
-      type: object
-      properties:
-        externalId:
-          type: string
-        organizationId:
-          type: string
-        accountId:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        dueDate:
-          type: string
-        completedAt:
-          type: string
-          format: date-time
-        assignedToId:
-          type: string
-        completedById:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-        traits:
-          type: object
-          additionalProperties: true
-      required:
-      - name
-      - accountId
+        next:
+          type:
+          - string
+          - 'null'
+          description: The cursor to use for the following page, or null at the end.
     Task:
       type: object
       properties:
@@ -248,6 +211,19 @@ components:
       - id
       - name
       - accountId
+    TaskCategory:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        name:
+          type: string
     SegmentRef:
       type: object
       properties:
@@ -255,14 +231,6 @@ components:
           type: string
         name:
           type: string
-    Cursor:
-      type: object
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          description: The cursor to use for the following page, or null at the end.
     Error:
       type: object
       properties:
@@ -271,15 +239,47 @@ components:
           description: Human-readable error message.
       required:
       - error
+    TaskWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        organizationId:
+          type: string
+        accountId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        dueDate:
+          type: string
+        completedAt:
+          type: string
+          format: date-time
+        assignedToId:
+          type: string
+        completedById:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        traits:
+          type: object
+          additionalProperties: true
+      required:
+      - name
+      - accountId
   responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
+    BadRequest:
+      description: Bad Request - the body of the request needs to be reviewed
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad Request - the body of the request needs to be reviewed
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
       content:
         application/json:
           schema:
@@ -293,12 +293,6 @@ components:
         type: integer
         maximum: 100
         default: 100
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
     sortBy:
       name: sortBy
       in: query
@@ -309,6 +303,12 @@ components:
         - createdAt
         - updatedAt
         default: updatedAt
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
   securitySchemes:
     basicAuth:
       type: http
