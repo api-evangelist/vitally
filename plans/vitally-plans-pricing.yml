@@ -1,0 +1,60 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.vitally.io/pricing
+sources:
+- https://www.vitally.io/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: false
+note: No numeric price is published on the pricing page; Three named plans, all listed as 'Request Pricing';
+  no numeric prices shown.
+plan_count: 3
+plans:
+- name: Tech-Touch
+  price_text: Request Pricing
+  period: none
+  included_quota: Designed for scaling with one-to-many & PLG Customer Success.
+- name: Hybrid-Touch
+  price_text: Request Pricing
+  period: none
+  included_quota: Designed for scaling with any model of Customer Success.
+- name: High-Touch
+  price_text: Request Pricing
+  period: none
+  included_quota: Designed for scaling with one-to-one Customer Success. UNLIMITED FULL SEATS
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models: []
+  units: []
+  plans:
+  - name: Tech-Touch
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: Hybrid-Touch
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
+  - name: High-Touch
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods:
+    - none
