@@ -1,0 +1,500 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/vitally/integrations
+checked:
+- https://composio.dev/toolkits/vitally
+- https://monid.ai/tools/vitally
+- https://n8n.io/integrations/vitally/
+- https://zapier.com/apps/vitally/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: vitally
+  url: https://zapier.com/apps/vitally/integrations
+  external_url: https://vitally.io/
+  partner_tier: SILVER
+  triggers:
+  - key: customerHook
+    label: Customer Created
+  - key: customerProjectTemplateList
+    label: List Project Templates
+  - key: customObjectInstanceList
+    label: List Custom Object Instances
+  - key: customObjectList
+    label: List Custom Objects
+  - key: custom_object_instance_created
+    label: Custom Object Instance Created
+  - key: custom_object_instance_updated
+    label: Custom Object Instance Updated
+  - key: indicator_instanceHook
+    label: New Active Indicator at Customer
+  - key: indicator_instance_deleted
+    label: Indicator Instance No Longer Active
+  - key: noteHook
+    label: Note Created
+  - key: npsResponseHook
+    label: NPS Response Created
+  - key: organizationHook
+    label: Organization Created
+  - key: organizationProjectTemplateList
+    label: List Project Templates
+  - key: projectHook
+    label: Project Created
+  - key: projectList
+    label: List Projects
+  - key: projectStatusList
+    label: List Project Statuses
+  - key: project_status_changed
+    label: Project Status Changed
+  - key: segment_customerHook
+    label: Customer Entered Segment
+  - key: segment_customer_deleted
+    label: Customer Exited Segment
+  - key: taskHook
+    label: Task Created
+  - key: task_completed
+    label: Task Completed
+  actions:
+  - key: customObjectInstanceCreate
+    label: Create a Custom Object Instance
+  - key: messageCreate
+    label: Create Message
+  - key: noteCreate
+    label: Create Note
+  - key: npsResponseCreate
+    label: Create NPS Response
+  - key: projectCreate
+    label: Create Project From Template
+  - key: segment_customerCreate
+    label: Add Customer to Segment
+  - key: taskCreate
+    label: Create Task
+  - key: trackCreate
+    label: Create Track
+  - key: update_customer_traits
+    label: Update Customer Traits
+  - key: update_custom_object_instance_traits
+    label: Update a Custom Object Instance Traits
+  - key: update_organization_traits
+    label: Update Organization Traits
+  - key: update_project_status
+    label: Update Project Status
+  - key: update_user_traits
+    label: Update User Traits
+  searches:
+  - key: customerSearch
+    label: Find a Customer
+  - key: customObjectInstanceSearch
+    label: Find a Custom Object Instance
+  - key: eventSearch
+    label: Find an Event
+  - key: noteSearch
+    label: Find a Note
+  - key: organizationSearch
+    label: Find a Organization
+  - key: taskSearch
+    label: Find a Task
+  - key: userSearch
+    label: Find a User
+  - key: vitallyUserSearch
+    label: Find a Teammate
+edges:
+- partner_name: Slack
+  partner: slack
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/slack
+  direction: third-party
+  category: Team Chat
+  partner_url: https://slack.com/
+- partner_name: HubSpot
+  partner: hubspot
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/hubspot
+  direction: third-party
+  category: Marketing Automation
+  partner_url: http://www.hubspot.com/
+- partner_name: Gmail
+  partner: gmail
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/gmail
+  direction: third-party
+  category: Email
+  partner_url: https://mail.google.com/
+- partner_name: Circle
+  partner: circle-community
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/circle
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://circle.so/
+- partner_name: Linear
+  partner: linear-app
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/linear
+  direction: third-party
+  category: Team Collaboration
+  partner_url: https://linear.app/
+- partner_name: Freshdesk
+  partner: freshdesk
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/freshdesk
+  direction: third-party
+  category: Customer Support
+  partner_url: http://freshdesk.com/
+- partner_name: ClickUp
+  partner: clickup
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/clickup
+  direction: third-party
+  category: Project Management
+  partner_url: https://clickup.com/zapier
+- partner_name: Fathom
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/fathom
+  direction: third-party
+  category: AI Meeting Assistants
+  partner_url: https://fathom.video/users/sign_up?utm_campaign=apipartners&utm_source=apipartner&utm_medium=CTA&utm_content=zapierlisting&utm_date=260714
+- partner_name: Gong
+  partner: gong
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/gong
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.gong.io/
+- partner_name: PostgreSQL
+  partner: postgresql
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/postgresql
+  direction: third-party
+  category: Databases
+  partner_url: http://www.postgresql.org/
+- partner_name: Sprig
+  partner: sprig
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/sprig
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://sprig.com/
+- partner_name: Introwise
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/introwise
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://introwise.com/
+- partner_name: Microsoft Outlook
+  partner: microsoft-outlook
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/microsoft-outlook
+  direction: third-party
+  category: Calendar
+  partner_url: https://outlook.live.com/
+- partner_name: Bettermode
+  partner: bettermode
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/bettermode
+  direction: third-party
+  category: Social Media Accounts
+  partner_url: https://bettermode.com/
+- partner_name: Thinkific
+  partner: thinkific
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/thinkific
+  direction: third-party
+  category: Online Courses
+  partner_url: http://www.thinkific.com/
+- partner_name: Teachable
+  partner: teachable
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/teachable
+  direction: third-party
+  category: Online Courses
+  partner_url: https://teachable.com/
+- partner_name: ShareFile
+  partner: citrix-sharefile
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/sharefile
+  direction: third-party
+  category: Content & Files
+  partner_url: https://www.sharefile.com/
+- partner_name: Chorus by ZoomInfo
+  partner: null
+  partner_match: null
+  partner_candidate: chorus-ai
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/chorus-by-zoominfo
+  direction: third-party
+  category: Sales & CRM
+  partner_url: https://www.chorus.ai/
+- partner_name: Front
+  partner: front
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/front-app
+  direction: third-party
+  category: Customer Support
+  partner_url: https://front.com/?utm_medium=referral&utm_source=partner-marketplace&utm_campaign=zapier
+- partner_name: Gainsight Customer Communities
+  partner: gainsight
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/gainsight-customer-communities
+  direction: third-party
+  category: Customer Support
+  partner_url: http://gainsight.com/
+- partner_name: LearnWorlds
+  partner: learnworlds
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/learnworlds
+  direction: third-party
+  category: Online Courses
+  partner_url: https://www.learnworlds.com/
+- partner_name: Grain
+  partner: grain
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/grain
+  direction: third-party
+  category: AI Meeting Assistants
+  partner_url: https://grain.com/
+- partner_name: Pendo
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/pendo-legacy
+  direction: third-party
+  category: Analytics
+  partner_url: https://www.pendo.io/
+- partner_name: Discord
+  partner: discord
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/discord
+  direction: third-party
+  category: Team Chat
+  partner_url: https://discordapp.com/
+- partner_name: LinkedIn
+  partner: linkedin
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/linkedin
+  direction: third-party
+  category: Microsoft
+  partner_url: http://www.linkedin.com/
+- partner_name: ShipStation
+  partner: shipstation
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/shipstation
+  direction: third-party
+  category: eCommerce
+  partner_url: http://www.shipstation.com/
+- partner_name: FreshBooks
+  partner: freshbooks
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/freshbooks
+  direction: third-party
+  category: Accounting
+  partner_url: https://www.freshbooks.com/?ref=10350
+- partner_name: Product Fruits
+  partner: product-fruits
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/product-fruits
+  direction: third-party
+  category: Product Management
+  partner_url: https://productfruits.com/
+- partner_name: Retently
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/retently
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.retently.com/
+- partner_name: SQL Server
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/sql-server
+  direction: third-party
+  category: Databases
+  partner_url: https://www.microsoft.com/sql-server
+templates:
+- title: Create a note in Vitally when a new Gong call is summarized by ChatGPT
+  url: https://zapier.com/apps/gong/integrations/slack/1695822/create-a-note-in-vitally-when-a-new-gong-call-is-summarized-by-chatgpt
+  apps:
+  - gong
+  - formatter
+  - chatgpt
+  - slack
+  - vitally
+  - webhook
+- title: Create an NPS response in Vitally from new responses in AskNicely
+  url: https://zapier.com/apps/asknicely/integrations/vitally/39305/create-an-nps-response-in-vitally-from-new-responses-in-asknicely
+  apps:
+  - asknicely
+  - vitally
+- title: Create multiple Google Sheets rows for each new Vitally nps response
+  url: https://zapier.com/apps/google-sheets/integrations/vitally/1397136/create-multiple-google-sheets-rows-for-each-new-vitally-nps-response
+  apps:
+  - vitally
+  - google-sheets
+- title: Send channel messages in Slack when new custom object instances are created in Vitally
+  url: https://zapier.com/apps/slack/integrations/vitally/1596061/send-channel-messages-in-slack-when-new-custom-object-instances-are-created-in-vitally
+  apps:
+  - vitally
+  - slack
+- title: Send Slack messages for new NPS responses
+  url: https://zapier.com/apps/slack/integrations/vitally/95165/send-slack-messages-for-new-nps-responses
+  apps:
+  - vitally
+  - slack
+- title: Add new responses from SatisMeter into Vitally
+  url: https://zapier.com/apps/satismeter/integrations/vitally/101357/add-new-responses-from-satismeter-into-vitally
+  apps:
+  - satismeter
+  - vitally
+- title: Send Slack channel messages for new customer indicators in Vitally
+  url: https://zapier.com/apps/slack/integrations/vitally/101359/send-slack-channel-messages-for-new-customer-indicators-in-vitally
+  apps:
+  - vitally
+  - slack
+- title: Create Vitally messages from new inbound messages in Front
+  url: https://zapier.com/apps/front-app/integrations/vitally/101366/create-vitally-messages-from-new-inbound-messages-in-front
+  apps:
+  - front-app
+  - vitally
+- title: Create NPS Responses in Vitally from new Wootric responses
+  url: https://zapier.com/apps/vitally/integrations/wootric/115761/create-nps-responses-in-vitally-from-new-wootric-responses
+  apps:
+  - wootric
+  - vitally
+- title: Tag companies in Copper when new accounts are created in Vitally
+  url: https://zapier.com/apps/copper/integrations/vitally/119977/tag-companies-in-copper-when-new-accounts-are-created-in-vitally
+  apps:
+  - vitally
+  - copper
+- title: Create messages in Vitally from new outbound messages in Front
+  url: https://zapier.com/apps/front-app/integrations/vitally/122210/create-messages-in-vitally-from-new-outbound-messages-in-front
+  apps:
+  - front-app
+  - formatter
+  - vitally
+- title: Share updates from Vitally as funnel events to Facebook Conversions
+  url: https://zapier.com/apps/facebook-conversions/integrations/vitally/789644/share-updates-from-vitally-as-funnel-events-to-facebook-conversions
+  apps:
+  - vitally
+  - facebook-conversions
+template_total: 81
