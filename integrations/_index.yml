@@ -405,16 +405,28 @@
   source: edge
   status: pending-partner-spec
   arazzo: null
+- slug: vitally-atlassian-marketplace
+  label: Atlassian Marketplace
+  partner: atlassian
+  partner_name: Atlassian Marketplace
+  type: marketplace
+  marketplace: atlassian
+  channel: partner-built
+  evidence: https://marketplace.atlassian.com/vendors/1224942/vitally
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
 - slug: vitally-twilio-segment
   label: Twilio Segment
   partner: segment
   partner_name: Twilio Segment
-  type: coverage
-  marketplace: coverage
+  type: marketplace
+  marketplace: segment-partner-destinations
   channel: partner-built
   evidence: https://www.twilio.com/docs/segment/connections/destinations/catalog/vitally
   source: edge
-  relationship: connector-coverage
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
 - slug: vitally-hightouch
@@ -427,17 +439,5 @@
   evidence: https://hightouch.com/docs/destinations/vitally
   source: edge
   relationship: connector-coverage
-  status: not-a-workflow
-  arazzo: null
-- slug: vitally-atlassian-marketplace
-  label: Atlassian Marketplace
-  partner: atlassian
-  partner_name: Atlassian Marketplace
-  type: marketplace
-  marketplace: atlassian
-  channel: partner-built
-  evidence: https://marketplace.atlassian.com/vendors/1224942/vitally
-  source: edge
-  relationship: platform-app
   status: not-a-workflow
   arazzo: null
