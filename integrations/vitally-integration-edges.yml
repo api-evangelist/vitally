@@ -5,6 +5,7 @@ source:
 checked:
 - https://composio.dev/toolkits/vitally
 - https://hightouch.com/docs/destinations/vitally
+- https://marketplace.atlassian.com/
 - https://monid.ai/tools/vitally
 - https://n8n.io/integrations/vitally/
 - https://www.twilio.com/docs/segment/connections/destinations/catalog/vitally
@@ -486,6 +487,21 @@ edges:
       - upsert
   detected_by: sweep-cdp.py
   first_seen: '2026-10-14'
+- partner_name: Atlassian Marketplace
+  partner: atlassian
+  partner_match: aggregator
+  type: marketplace
+  marketplace: atlassian
+  channel: partner-built
+  relationship: platform-app
+  direction: third-party
+  evidence: https://marketplace.atlassian.com/vendors/1224942/vitally
+  listing_count: 1
+  apps:
+  - Vitally
+  publisher_name: Vitally
+  detected_by: sweep-devtools.py
+  detected: '2026-10-14'
 templates:
 - title: Create a note in Vitally when a new Gong call is summarized by ChatGPT
   url: https://zapier.com/apps/gong/integrations/slack/1695822/create-a-note-in-vitally-when-a-new-gong-call-is-summarized-by-chatgpt
