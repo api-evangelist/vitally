@@ -160,50 +160,6 @@ components:
           - string
           - 'null'
           description: The cursor to use for the following page, or null at the end.
-    AccountWrite:
-      type: object
-      properties:
-        externalId:
-          type: string
-        name:
-          type: string
-        organizationId:
-          type:
-          - string
-          - 'null'
-        accountOwnerId:
-          type:
-          - string
-          - 'null'
-        traits:
-          type: object
-          additionalProperties: true
-      required:
-      - name
-    SegmentRef:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    AccountList:
-      allOf:
-      - $ref: '#/components/schemas/Cursor'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/Account'
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Human-readable error message.
-      required:
-      - error
     Account:
       type: object
       properties:
@@ -313,11 +269,61 @@ components:
       required:
       - id
       - name
+    AccountWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        name:
+          type: string
+        organizationId:
+          type:
+          - string
+          - 'null'
+        accountOwnerId:
+          type:
+          - string
+          - 'null'
+        traits:
+          type: object
+          additionalProperties: true
+      required:
+      - name
+    SegmentRef:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Human-readable error message.
+      required:
+      - error
+    AccountList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/Account'
   parameters:
     accountId:
       name: accountId
       in: path
       required: true
+      schema:
+        type: string
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
       schema:
         type: string
     limit:
@@ -338,13 +344,13 @@ components:
         - createdAt
         - updatedAt
         default: updatedAt
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
   responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
     TooManyRequests:
       description: Too Many Requests - rate limit exceeded (default 1000 requests/min)
       headers:
@@ -358,12 +364,6 @@ components:
         RateLimit-Reset:
           schema:
             type: integer
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
       content:
         application/json:
           schema:

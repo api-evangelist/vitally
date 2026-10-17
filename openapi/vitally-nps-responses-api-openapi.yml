@@ -65,14 +65,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    Cursor:
-      type: object
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          description: The cursor to use for the following page, or null at the end.
     GenericObject:
       type: object
       description: Common Vitally object envelope. Every REST object exposes id, createdAt, updatedAt, externalId, name and a traits map; resource-specific fields are documented per resource.
@@ -97,14 +89,6 @@ components:
           type: object
           additionalProperties: true
       additionalProperties: true
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Human-readable error message.
-      required:
-      - error
     ObjectList:
       allOf:
       - $ref: '#/components/schemas/Cursor'
@@ -114,14 +98,29 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/GenericObject'
-  responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
+    Cursor:
+      type: object
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          description: The cursor to use for the following page, or null at the end.
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Human-readable error message.
+      required:
+      - error
   parameters:
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
+      schema:
+        type: string
     limit:
       name: limit
       in: query
@@ -140,12 +139,13 @@ components:
         - createdAt
         - updatedAt
         default: updatedAt
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     basicAuth:
       type: http

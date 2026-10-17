@@ -125,131 +125,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    UserWrite:
-      type: object
-      properties:
-        externalId:
-          type: string
-        name:
-          type: string
-        email:
-          type: string
-          format: email
-        avatar:
-          type: string
-        traits:
-          type: object
-          additionalProperties: true
-        accountIds:
-          type: array
-          items:
-            type: string
-      required:
-      - name
-    UserList:
-      allOf:
-      - $ref: '#/components/schemas/Cursor'
-      - type: object
-        properties:
-          results:
-            type: array
-            items:
-              $ref: '#/components/schemas/User'
-    Cursor:
-      type: object
-      properties:
-        next:
-          type:
-          - string
-          - 'null'
-          description: The cursor to use for the following page, or null at the end.
-    User:
-      type: object
-      properties:
-        id:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        updatedAt:
-          type: string
-          format: date-time
-        externalId:
-          type: string
-        name:
-          type: string
-        email:
-          type: string
-          format: email
-        avatar:
-          type:
-          - string
-          - 'null'
-        traits:
-          type: object
-          additionalProperties: true
-        firstKnown:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastSeenTimestamp:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastInboundMessageTimestamp:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        lastOutboundMessageTimestamp:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        npsLastScore:
-          type:
-          - number
-          - 'null'
-        npsLastFeedback:
-          type:
-          - string
-          - 'null'
-        npsLastRespondedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        unsubscribedFromConversations:
-          type: boolean
-        unsubscribedFromConversationsAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        deactivatedAt:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        permanentlyBounced:
-          type: boolean
-        segments:
-          type: array
-          items:
-            $ref: '#/components/schemas/SegmentRef'
-        accounts:
-          type: array
-          items:
-            $ref: '#/components/schemas/Account'
-        organizations:
-          type: array
-          items:
-            $ref: '#/components/schemas/GenericObject'
-      required:
-      - id
-      - name
     GenericObject:
       type: object
       description: Common Vitally object envelope. Every REST object exposes id, createdAt, updatedAt, externalId, name and a traits map; resource-specific fields are documented per resource.
@@ -274,21 +149,6 @@ components:
           type: object
           additionalProperties: true
       additionalProperties: true
-    SegmentRef:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    Error:
-      type: object
-      properties:
-        error:
-          type: string
-          description: Human-readable error message.
-      required:
-      - error
     Account:
       type: object
       properties:
@@ -398,11 +258,164 @@ components:
       required:
       - id
       - name
+    Cursor:
+      type: object
+      properties:
+        next:
+          type:
+          - string
+          - 'null'
+          description: The cursor to use for the following page, or null at the end.
+    SegmentRef:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Human-readable error message.
+      required:
+      - error
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+        externalId:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        avatar:
+          type:
+          - string
+          - 'null'
+        traits:
+          type: object
+          additionalProperties: true
+        firstKnown:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastSeenTimestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastInboundMessageTimestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        lastOutboundMessageTimestamp:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        npsLastScore:
+          type:
+          - number
+          - 'null'
+        npsLastFeedback:
+          type:
+          - string
+          - 'null'
+        npsLastRespondedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        unsubscribedFromConversations:
+          type: boolean
+        unsubscribedFromConversationsAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        deactivatedAt:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        permanentlyBounced:
+          type: boolean
+        segments:
+          type: array
+          items:
+            $ref: '#/components/schemas/SegmentRef'
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        organizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/GenericObject'
+      required:
+      - id
+      - name
+    UserList:
+      allOf:
+      - $ref: '#/components/schemas/Cursor'
+      - type: object
+        properties:
+          results:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
+    UserWrite:
+      type: object
+      properties:
+        externalId:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        avatar:
+          type: string
+        traits:
+          type: object
+          additionalProperties: true
+        accountIds:
+          type: array
+          items:
+            type: string
+      required:
+      - name
+  responses:
+    Unauthorized:
+      description: Unauthorized - there is an issue with the authorization used
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   parameters:
     accountId:
       name: accountId
       in: path
       required: true
+      schema:
+        type: string
+    from:
+      name: from
+      in: query
+      description: The cursor returned from a previous request (from the next property).
       schema:
         type: string
     limit:
@@ -423,19 +436,6 @@ components:
         - createdAt
         - updatedAt
         default: updatedAt
-    from:
-      name: from
-      in: query
-      description: The cursor returned from a previous request (from the next property).
-      schema:
-        type: string
-  responses:
-    Unauthorized:
-      description: Unauthorized - there is an issue with the authorization used
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   securitySchemes:
     basicAuth:
       type: http
