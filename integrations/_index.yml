@@ -15,6 +15,7 @@
   evidence: https://zapier.com/apps/gong/integrations/slack/1695822/create-a-note-in-vitally-when-a-new-gong-call-is-summarized-by-chatgpt
   template: https://zapier.com/apps/gong/integrations/slack/1695822/create-a-note-in-vitally-when-a-new-gong-call-is-summarized-by-chatgpt
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: vitally-send-channel-messages-in-slack-when-new-custom-object-instances-are-created-in-vit
@@ -29,6 +30,7 @@
   evidence: https://zapier.com/apps/slack/integrations/vitally/1596061/send-channel-messages-in-slack-when-new-custom-object-instances-are-created-in-vitally
   template: https://zapier.com/apps/slack/integrations/vitally/1596061/send-channel-messages-in-slack-when-new-custom-object-instances-are-created-in-vitally
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: vitally-send-slack-messages-for-new-nps-responses
@@ -43,6 +45,7 @@
   evidence: https://zapier.com/apps/slack/integrations/vitally/95165/send-slack-messages-for-new-nps-responses
   template: https://zapier.com/apps/slack/integrations/vitally/95165/send-slack-messages-for-new-nps-responses
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: vitally-send-slack-channel-messages-for-new-customer-indicators-in-vitally
@@ -57,6 +60,7 @@
   evidence: https://zapier.com/apps/slack/integrations/vitally/101359/send-slack-channel-messages-for-new-customer-indicators-in-vitally
   template: https://zapier.com/apps/slack/integrations/vitally/101359/send-slack-channel-messages-for-new-customer-indicators-in-vitally
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: vitally-create-vitally-messages-from-new-inbound-messages-in-front
@@ -71,6 +75,7 @@
   evidence: https://zapier.com/apps/front-app/integrations/vitally/101366/create-vitally-messages-from-new-inbound-messages-in-front
   template: https://zapier.com/apps/front-app/integrations/vitally/101366/create-vitally-messages-from-new-inbound-messages-in-front
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
   arazzo: null
 - slug: vitally-create-messages-in-vitally-from-new-outbound-messages-in-front
@@ -85,325 +90,8 @@
   evidence: https://zapier.com/apps/front-app/integrations/vitally/122210/create-messages-in-vitally-from-new-outbound-messages-in-front
   template: https://zapier.com/apps/front-app/integrations/vitally/122210/create-messages-in-vitally-from-new-outbound-messages-in-front
   source: template
+  relationship: ipaas-bridge
   status: pending-generation
-  arazzo: null
-- slug: vitally-hubspot
-  label: HubSpot
-  partner: hubspot
-  partner_name: HubSpot
-  category: Marketing Automation
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/hubspot
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-gmail
-  label: Gmail
-  partner: gmail
-  partner_name: Gmail
-  category: Email
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/gmail
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: vitally-circle
-  label: Circle
-  partner: circle-community
-  partner_name: Circle
-  category: CRM (Customer Relationship Management)
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/circle
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-linear
-  label: Linear
-  partner: linear-app
-  partner_name: Linear
-  category: Team Collaboration
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/linear
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: vitally-freshdesk
-  label: Freshdesk
-  partner: freshdesk
-  partner_name: Freshdesk
-  category: Customer Support
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/freshdesk
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-clickup
-  label: ClickUp
-  partner: clickup
-  partner_name: ClickUp
-  category: Project Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/clickup
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-fathom
-  label: Fathom
-  partner_name: Fathom
-  category: AI Meeting Assistants
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/fathom
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: vitally-postgresql
-  label: PostgreSQL
-  partner: postgresql
-  partner_name: PostgreSQL
-  category: Databases
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/postgresql
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: vitally-sprig
-  label: Sprig
-  partner: sprig
-  partner_name: Sprig
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/sprig
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-introwise
-  label: Introwise
-  partner_name: Introwise
-  category: Scheduling & Booking
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/introwise
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: vitally-microsoft-outlook
-  label: Microsoft Outlook
-  partner: microsoft-outlook
-  partner_name: Microsoft Outlook
-  category: Calendar
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/microsoft-outlook
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-bettermode
-  label: Bettermode
-  partner: bettermode
-  partner_name: Bettermode
-  category: Social Media Accounts
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/bettermode
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: vitally-thinkific
-  label: Thinkific
-  partner: thinkific
-  partner_name: Thinkific
-  category: Online Courses
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/thinkific
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-teachable
-  label: Teachable
-  partner: teachable
-  partner_name: Teachable
-  category: Online Courses
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/teachable
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-sharefile
-  label: ShareFile
-  partner: citrix-sharefile
-  partner_name: ShareFile
-  category: Content & Files
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/sharefile
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-chorus-by-zoominfo
-  label: Chorus by ZoomInfo
-  partner_name: Chorus by ZoomInfo
-  category: Sales & CRM
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/chorus-by-zoominfo
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: vitally-gainsight-customer-communities
-  label: Gainsight Customer Communities
-  partner: gainsight
-  partner_name: Gainsight Customer Communities
-  category: Customer Support
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/gainsight-customer-communities
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-learnworlds
-  label: LearnWorlds
-  partner: learnworlds
-  partner_name: LearnWorlds
-  category: Online Courses
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/learnworlds
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-grain
-  label: Grain
-  partner: grain
-  partner_name: Grain
-  category: AI Meeting Assistants
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/grain
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: vitally-pendo
-  label: Pendo
-  partner_name: Pendo
-  category: Analytics
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/pendo-legacy
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: vitally-discord
-  label: Discord
-  partner: discord
-  partner_name: Discord
-  category: Team Chat
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/discord
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-linkedin
-  label: LinkedIn
-  partner: linkedin
-  partner_name: LinkedIn
-  category: Microsoft
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/linkedin
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-shipstation
-  label: ShipStation
-  partner: shipstation
-  partner_name: ShipStation
-  category: eCommerce
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/shipstation
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-freshbooks
-  label: FreshBooks
-  partner: freshbooks
-  partner_name: FreshBooks
-  category: Accounting
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/freshbooks
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-product-fruits
-  label: Product Fruits
-  partner: product-fruits
-  partner_name: Product Fruits
-  category: Product Management
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/product-fruits
-  source: edge
-  status: pending-generation
-  arazzo: null
-- slug: vitally-retently
-  label: Retently
-  partner_name: Retently
-  category: Forms & Surveys
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/retently
-  source: edge
-  status: pending-partner-spec
-  arazzo: null
-- slug: vitally-sql-server
-  label: SQL Server
-  partner_name: SQL Server
-  category: Databases
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/vitally/integrations/sql-server
-  source: edge
-  status: pending-partner-spec
   arazzo: null
 - slug: vitally-atlassian-marketplace
   label: Atlassian Marketplace
@@ -589,4 +277,351 @@
     sources: true
     builder: Pipedream repo (component)
   status: not-a-workflow
+  arazzo: null
+- slug: vitally-hubspot
+  label: HubSpot
+  partner: hubspot
+  partner_name: HubSpot
+  category: Marketing Automation
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/hubspot
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-gmail
+  label: Gmail
+  partner: gmail
+  partner_name: Gmail
+  category: Email
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/gmail
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: vitally-circle
+  label: Circle
+  partner: circle-community
+  partner_name: Circle
+  category: CRM (Customer Relationship Management)
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/circle
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-linear
+  label: Linear
+  partner: linear-app
+  partner_name: Linear
+  category: Team Collaboration
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/linear
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: vitally-freshdesk
+  label: Freshdesk
+  partner: freshdesk
+  partner_name: Freshdesk
+  category: Customer Support
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/freshdesk
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-clickup
+  label: ClickUp
+  partner: clickup
+  partner_name: ClickUp
+  category: Project Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/clickup
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-fathom
+  label: Fathom
+  partner_name: Fathom
+  category: AI Meeting Assistants
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/fathom
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: vitally-postgresql
+  label: PostgreSQL
+  partner: postgresql
+  partner_name: PostgreSQL
+  category: Databases
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/postgresql
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: vitally-sprig
+  label: Sprig
+  partner: sprig
+  partner_name: Sprig
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/sprig
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-introwise
+  label: Introwise
+  partner_name: Introwise
+  category: Scheduling & Booking
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/introwise
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: vitally-microsoft-outlook
+  label: Microsoft Outlook
+  partner: microsoft-outlook
+  partner_name: Microsoft Outlook
+  category: Calendar
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/microsoft-outlook
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-bettermode
+  label: Bettermode
+  partner: bettermode
+  partner_name: Bettermode
+  category: Social Media Accounts
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/bettermode
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: vitally-thinkific
+  label: Thinkific
+  partner: thinkific
+  partner_name: Thinkific
+  category: Online Courses
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/thinkific
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-teachable
+  label: Teachable
+  partner: teachable
+  partner_name: Teachable
+  category: Online Courses
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/teachable
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-sharefile
+  label: ShareFile
+  partner: citrix-sharefile
+  partner_name: ShareFile
+  category: Content & Files
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/sharefile
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-chorus-by-zoominfo
+  label: Chorus by ZoomInfo
+  partner_name: Chorus by ZoomInfo
+  category: Sales & CRM
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/chorus-by-zoominfo
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: vitally-gainsight-customer-communities
+  label: Gainsight Customer Communities
+  partner: gainsight
+  partner_name: Gainsight Customer Communities
+  category: Customer Support
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/gainsight-customer-communities
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-learnworlds
+  label: LearnWorlds
+  partner: learnworlds
+  partner_name: LearnWorlds
+  category: Online Courses
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/learnworlds
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-grain
+  label: Grain
+  partner: grain
+  partner_name: Grain
+  category: AI Meeting Assistants
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/grain
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: vitally-pendo
+  label: Pendo
+  partner: pendoio
+  partner_name: Pendo
+  category: Analytics
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/pendo-legacy
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-discord
+  label: Discord
+  partner: discord
+  partner_name: Discord
+  category: Team Chat
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/discord
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-linkedin
+  label: LinkedIn
+  partner: linkedin-ads
+  partner_name: LinkedIn
+  category: Microsoft
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/linkedin
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-shipstation
+  label: ShipStation
+  partner: shipstation
+  partner_name: ShipStation
+  category: eCommerce
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/shipstation
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-freshbooks
+  label: FreshBooks
+  partner: freshbooks
+  partner_name: FreshBooks
+  category: Accounting
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/freshbooks
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-product-fruits
+  label: Product Fruits
+  partner: product-fruits
+  partner_name: Product Fruits
+  category: Product Management
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/product-fruits
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
+  arazzo: null
+- slug: vitally-retently
+  label: Retently
+  partner_name: Retently
+  category: Forms & Surveys
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/retently
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-partner-spec
+  arazzo: null
+- slug: vitally-sql-server
+  label: SQL Server
+  partner: microsoft-sql-server
+  partner_name: SQL Server
+  category: Databases
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/vitally/integrations/sql-server
+  source: edge
+  relationship: ipaas-bridge
+  status: pending-generation
   arazzo: null
