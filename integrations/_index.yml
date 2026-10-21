@@ -214,19 +214,6 @@
     builder: 'community (Meltano Hub variant maintainers: airbyte)'
   status: not-a-workflow
   arazzo: null
-- slug: vitally-chargebee-own
-  label: Chargebee (own)
-  partner: chargebee
-  partner_name: Chargebee (own)
-  category: Customer Success & Retention
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.chargebee.com/apps/['vitally']
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: vitally-zapier
   label: Zapier
   partner: zapier
@@ -624,4 +611,60 @@
   source: edge
   relationship: ipaas-bridge
   status: pending-generation
+  arazzo: null
+- slug: vitally-andreessen-horowitz-a16z
+  label: Andreessen Horowitz (a16z)
+  partner: a16z
+  partner_name: Andreessen Horowitz (a16z)
+  category: vc portfolio participation
+  type: register
+  channel: standard-directory
+  evidence: https://a16z.com/companies/vitally/
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: a16z portfolio (a16z.com/portfolio/, the page's own data-companies JSON)
+    standard: null
+    spec_file: null
+    role: vc-portfolio-company
+    registered_name: Vitally
+    register_id: https://a16z.com/companies/vitally/
+    register_country: null
+    register_website: https://vitally.io/
+    matched_domain: vitally.io
+    matched_by: domain
+    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-vc-portfolios.py
+    detected: '2026-10-21'
+    year: '2021'
+    status: Active
+    sector: Enterprise
+  status: not-a-workflow
+  arazzo: null
+- slug: vitally-chargebee-own
+  label: Chargebee (own)
+  partner: chargebee
+  partner_name: Chargebee (own)
+  category: Customer Success & Retention
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.chargebee.com/apps/['vitally']
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: vitally-hubspot-own
+  label: HubSpot (own)
+  partner: hubspot
+  partner_name: HubSpot (own)
+  category: CUSTOMER_SUCCESS
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://ecosystem.hubspot.com/marketplace/listing/vitally-198900
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
   arazzo: null

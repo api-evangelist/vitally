@@ -19,6 +19,13 @@ checked:
 - https://www.twilio.com/docs/segment/connections/destinations/catalog/vitally
 - https://zapier.com/api/v4/apps/
 - https://zapier.com/apps/vitally/integrations
+- https://a16z.com/portfolio/
+- https://www.battery.com/company/
+- https://www.battery.com/wp-admin/admin-ajax.php
+- https://www.indexventures.com/companies/
+- https://www.sequoiacap.com/our-companies/
+- https://www.sequoiacap.com/sitemap.xml
+- hubspot/integrations/hubspot-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -266,23 +273,6 @@ edges:
     builder: 'community (Meltano Hub variant maintainers: airbyte)'
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
-- partner_name: Chargebee (own)
-  partner: chargebee
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://marketplace.chargebee.com/apps/['vitally']
-  mirror_of: chargebee/integrations/chargebee-integration-edges.yml
-  apps:
-  - Vitally
-  listing_count: 1
-  detected: '2026-10-19'
-  detected_by: mirror-platform-listings.py
-  category: Customer Success & Retention
 - partner_name: Zapier
   partner: zapier
   partner_match: aggregator
@@ -694,6 +684,69 @@ edges:
   direction: third-party
   category: Databases
   partner_url: https://www.microsoft.com/sql-server
+- partner_name: Andreessen Horowitz (a16z)
+  partner: a16z
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://a16z.com/companies/vitally/
+  category: vc portfolio participation
+  contract_reference:
+    register: a16z portfolio (a16z.com/portfolio/, the page's own data-companies JSON)
+    standard: null
+    spec_file: null
+    role: vc-portfolio-company
+    registered_name: Vitally
+    register_id: https://a16z.com/companies/vitally/
+    register_country: null
+    register_website: https://vitally.io/
+    matched_domain: vitally.io
+    matched_by: domain
+    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-vc-portfolios.py
+    detected: '2026-10-21'
+    year: '2021'
+    status: Active
+    sector: Enterprise
+  detected_by: sweep-vc-portfolios.py
+  first_seen: '2026-10-21'
+- partner_name: Chargebee (own)
+  partner: chargebee
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.chargebee.com/apps/['vitally']
+  mirror_of: chargebee/integrations/chargebee-integration-edges.yml
+  apps:
+  - Vitally
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+  category: Customer Success & Retention
+- partner_name: HubSpot (own)
+  partner: hubspot
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://ecosystem.hubspot.com/marketplace/listing/vitally-198900
+  mirror_of: hubspot/integrations/hubspot-integration-edges.yml
+  apps:
+  - Vitally
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: CUSTOMER_SUCCESS
 templates:
 - title: Create a note in Vitally when a new Gong call is summarized by ChatGPT
   url: https://zapier.com/apps/gong/integrations/slack/1695822/create-a-note-in-vitally-when-a-new-gong-call-is-summarized-by-chatgpt
