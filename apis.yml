@@ -193,6 +193,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/vitally/overview
 - type: Plans
   url: plans/vitally-plans-pricing.yml
 - type: Overlay
