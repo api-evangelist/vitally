@@ -26,6 +26,7 @@ checked:
 - https://www.sequoiacap.com/our-companies/
 - https://www.sequoiacap.com/sitemap.xml
 - hubspot/integrations/hubspot-integration-edges.yml
+- intercom/integrations/intercom-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -747,6 +748,23 @@ edges:
   detected: '2026-10-21'
   detected_by: mirror-platform-listings.py
   category: CUSTOMER_SUCCESS
+- partner_name: Intercom (own)
+  partner: intercom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.intercom.com/app-store/?app_package_code=vitally
+  mirror_of: intercom/integrations/intercom-integration-edges.yml
+  apps:
+  - Vitally
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Customer data & CRM
 templates:
 - title: Create a note in Vitally when a new Gong call is summarized by ChatGPT
   url: https://zapier.com/apps/gong/integrations/slack/1695822/create-a-note-in-vitally-when-a-new-gong-call-is-summarized-by-chatgpt
