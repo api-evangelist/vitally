@@ -1,202 +1,173 @@
 {
+  "info": {
+    "_postman_id": "8034e91e-b7e4-4616-8b93-97363d17415a",
+    "name": "Vitally REST Admins API",
+    "description": "Vitally's public REST API for creating, updating, retrieving and listing the core Customer Success objects \u2014 Accounts, Organizations, Users, Tasks, Notes, Conversations and NPS Responses. Authentication is HTTP Basic using a Vitally REST API key as the username. List endpoints use cursor-based pagination ordered by updatedAt (default) or createdAt.\n\nContact Support:\n Name: Vitally",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T01:29:35.000Z",
+    "updatedAt": "2026-10-22T01:29:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8034e91e-b7e4-4616-8b93-97363d17415a"
+  },
   "item": [
     {
-      "id": "38516a42-df96-4610-b1e7-79f9371f75b2",
-      "name": "Admins",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "admins",
       "item": [
         {
-          "id": "9fb101f0-0042-4761-8eff-2f52286a4749",
           "name": "List admins (team members)",
+          "id": "608065e1-2a4c-4347-8ab7-a137a5035e87",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
-            "name": "List admins (team members)",
-            "description": {},
-            "url": {
-              "path": [
-                "admins"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "limit",
-                  "value": "100",
-                  "description": "Number of items to return. Max/default is 100."
-                },
-                {
-                  "disabled": false,
-                  "key": "from",
-                  "value": "<string>",
-                  "description": "The cursor returned from a previous request (from the next property)."
-                }
-              ],
-              "variable": [
-                {
-                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                  "type": "any",
-                  "value": "{{subdomain}}",
-                  "key": "subdomain"
-                }
-              ]
-            },
+            "method": "GET",
             "header": [
               {
                 "key": "Accept",
                 "value": "application/json"
               }
             ],
-            "method": "GET",
-            "auth": null
+            "url": {
+              "raw": "{{baseUrl}}/admins?limit=100&from=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "admins"
+              ],
+              "query": [
+                {
+                  "description": "Number of items to return. Max/default is 100.",
+                  "key": "limit",
+                  "value": "100"
+                },
+                {
+                  "description": "The cursor returned from a previous request (from the next property).",
+                  "key": "from",
+                  "value": "<string>"
+                }
+              ]
+            }
           },
           "response": [
             {
-              "id": "4e5f32fe-e189-4b27-9b31-0c9dece77542",
+              "id": "61ed233a-f7ce-409c-87e3-382286111cda",
               "name": "A page of admins",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
                 "url": {
-                  "path": [
-                    "admins"
-                  ],
+                  "raw": "{{baseUrl}}/admins?limit=100&from=<string>",
                   "host": [
                     "{{baseUrl}}"
                   ],
+                  "path": [
+                    "admins"
+                  ],
                   "query": [
                     {
+                      "description": "Number of items to return. Max/default is 100.",
                       "key": "limit",
                       "value": "100"
                     },
                     {
+                      "description": "The cursor returned from a previous request (from the next property).",
                       "key": "from",
                       "value": "<string>"
                     }
-                  ],
-                  "variable": [
-                    {
-                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                      "type": "any",
-                      "value": "{{subdomain}}",
-                      "key": "subdomain"
-                    }
                   ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"next\": \"string\",\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"2024-03-17T20:49:41.248Z\",\n      \"updatedAt\": \"2011-09-21T14:41:36.772Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": false\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"1956-07-02T04:51:07.813Z\",\n      \"updatedAt\": \"2013-09-12T04:18:41.070Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": 764,\n        \"key_1\": true\n      }\n    }\n  ]\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"next\": \"<string,null>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"externalId\": \"<string,null>\",\n      \"name\": \"<string,null>\",\n      \"traits\": {\n        \"ullamco71d\": true,\n        \"Lorem548\": -27787736.962498143,\n        \"Duis7\": \"pariatur sint\"\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"externalId\": \"<string,null>\",\n      \"name\": \"<string,null>\",\n      \"traits\": {\n        \"amet_e8\": true,\n        \"velit_da\": -63504961,\n        \"et6\": false\n      }\n    }\n  ]\n}",
+              "createdAt": "2026-10-22T01:29:35.000Z",
+              "updatedAt": "2026-10-22T01:29:35.000Z",
+              "uid": "35240-61ed233a-f7ce-409c-87e3-382286111cda"
             },
             {
-              "id": "47a2343e-8727-40ce-8938-57d27a672a69",
+              "id": "20284e2b-e827-4791-8ae7-687a8a152e0b",
               "name": "Unauthorized - there is an issue with the authorization used",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
                 "url": {
-                  "path": [
-                    "admins"
-                  ],
+                  "raw": "{{baseUrl}}/admins?limit=100&from=<string>",
                   "host": [
                     "{{baseUrl}}"
                   ],
+                  "path": [
+                    "admins"
+                  ],
                   "query": [
                     {
+                      "description": "Number of items to return. Max/default is 100.",
                       "key": "limit",
                       "value": "100"
                     },
                     {
+                      "description": "The cursor returned from a previous request (from the next property).",
                       "key": "from",
                       "value": "<string>"
                     }
-                  ],
-                  "variable": [
-                    {
-                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                      "type": "any",
-                      "value": "{{subdomain}}",
-                      "key": "subdomain"
-                    }
                   ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                }
               },
               "status": "Unauthorized",
               "code": 401,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:29:35.000Z",
+              "updatedAt": "2026-10-22T01:29:35.000Z",
+              "uid": "35240-20284e2b-e827-4791-8ae7-687a8a152e0b"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "createdAt": "2026-10-22T01:29:35.000Z",
+          "updatedAt": "2026-10-22T01:29:35.000Z",
+          "uid": "35240-608065e1-2a4c-4347-8ab7-a137a5035e87"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "description": {
-        "content": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-        "type": "text/plain"
-      },
-      "type": "any",
-      "value": "yoursubdomain",
-      "key": "subdomain"
-    },
-    {
-      "type": "string",
-      "value": "https://{{subdomain}}.rest.vitally.io/resources",
-      "key": "baseUrl"
+      "id": "f8d4c55c-63c5-4dba-b033-1fa1ea022518",
+      "createdAt": "2026-10-22T01:29:35.000Z",
+      "updatedAt": "2026-10-22T01:29:35.000Z",
+      "uid": "35240-f8d4c55c-63c5-4dba-b033-1fa1ea022518"
     }
   ],
   "auth": {
@@ -204,21 +175,24 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "cd8cff52-4aed-44fd-85da-19e1281b46f0",
-    "name": "Vitally REST Accounts Admins API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "Vitally's public REST API for creating, updating, retrieving and listing the core Customer Success objects — Accounts, Organizations, Users, Tasks, Notes, Conversations and NPS Responses. Authentication is HTTP Basic using a Vitally REST API key as the username. List endpoints use cursor-based pagination ordered by updatedAt (default) or createdAt.\n\nContact Support:\n Name: Vitally",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "subdomain",
+      "value": "yoursubdomain"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{subdomain}}.rest.vitally.io/resources"
     }
-  }
+  ]
 }

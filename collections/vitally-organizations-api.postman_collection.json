@@ -1,739 +1,665 @@
 {
+  "info": {
+    "_postman_id": "5b0e726c-fff6-4200-b630-b98dee37cc95",
+    "name": "Vitally REST Organizations API",
+    "description": "Vitally's public REST API for creating, updating, retrieving and listing the core Customer Success objects \u2014 Accounts, Organizations, Users, Tasks, Notes, Conversations and NPS Responses. Authentication is HTTP Basic using a Vitally REST API key as the username. List endpoints use cursor-based pagination ordered by updatedAt (default) or createdAt.\n\nContact Support:\n Name: Vitally",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T01:30:06.000Z",
+    "updatedAt": "2026-10-22T01:30:07.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5b0e726c-fff6-4200-b630-b98dee37cc95"
+  },
   "item": [
     {
-      "id": "662b77bf-7b64-43e6-9b9d-eb7d7b43bb14",
-      "name": "Organizations",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "organizations",
       "item": [
         {
-          "id": "70c589e8-9923-40ca-9421-f5da7e944393",
-          "name": "List organizations",
-          "request": {
-            "name": "List organizations",
-            "description": {},
-            "url": {
-              "path": [
-                "organizations"
+          "name": "{organizationId}",
+          "item": [
+            {
+              "name": "Get an organization",
+              "id": "78e460fe-22ef-4b43-89f1-5154ff3a5c96",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/organizations/:organizationId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "organizations",
+                    ":organizationId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "499f6e8e-9a16-4db6-b4dd-0862b5c5a79f",
+                      "key": "organizationId",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "b428a76a-e6b2-4c7a-ad2a-3869b8b7db5d",
+                  "name": "The organization",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/organizations/:organizationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations",
+                        ":organizationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "organizationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"externalId\": \"<string,null>\",\n  \"name\": \"<string,null>\",\n  \"traits\": {\n    \"Ut_7_e\": -15057883.497129068,\n    \"quif\": 10163910\n  }\n}",
+                  "createdAt": "2026-10-22T01:30:07.000Z",
+                  "updatedAt": "2026-10-22T01:30:07.000Z",
+                  "uid": "35240-b428a76a-e6b2-4c7a-ad2a-3869b8b7db5d"
+                },
+                {
+                  "id": "52b51000-633c-40d2-a272-b38c4170db22",
+                  "name": "Unauthorized - there is an issue with the authorization used",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/organizations/:organizationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations",
+                        ":organizationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "organizationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": \"<string>\"\n}",
+                  "createdAt": "2026-10-22T01:30:07.000Z",
+                  "updatedAt": "2026-10-22T01:30:07.000Z",
+                  "uid": "35240-52b51000-633c-40d2-a272-b38c4170db22"
+                }
               ],
+              "createdAt": "2026-10-22T01:30:07.000Z",
+              "updatedAt": "2026-10-22T01:30:07.000Z",
+              "uid": "35240-78e460fe-22ef-4b43-89f1-5154ff3a5c96"
+            },
+            {
+              "name": "Update an organization",
+              "id": "60ff9095-16fd-4b8e-8767-0078dc8e384a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"in_9\": 99483860.3289606,\n    \"sitbe\": -31626097.660537183\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/organizations/:organizationId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "organizations",
+                    ":organizationId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "7c5b27c8-a28b-4473-a757-6b8919d4907c",
+                      "key": "organizationId",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "ff7804bb-340a-4bea-a139-489e0874eb9d",
+                  "name": "The updated organization",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"in_9\": 99483860.3289606,\n    \"sitbe\": -31626097.660537183\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/organizations/:organizationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations",
+                        ":organizationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "organizationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"id\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"externalId\": \"<string,null>\",\n  \"name\": \"<string,null>\",\n  \"traits\": {\n    \"Ut_7_e\": -15057883.497129068,\n    \"quif\": 10163910\n  }\n}",
+                  "createdAt": "2026-10-22T01:30:07.000Z",
+                  "updatedAt": "2026-10-22T01:30:07.000Z",
+                  "uid": "35240-ff7804bb-340a-4bea-a139-489e0874eb9d"
+                },
+                {
+                  "id": "db63532b-0922-4525-aed4-7c648096c78c",
+                  "name": "Unauthorized - there is an issue with the authorization used",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: basic",
+                        "key": "Authorization",
+                        "value": "Basic <credentials>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"in_9\": 99483860.3289606,\n    \"sitbe\": -31626097.660537183\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/organizations/:organizationId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "organizations",
+                        ":organizationId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "organizationId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"error\": \"<string>\"\n}",
+                  "createdAt": "2026-10-22T01:30:07.000Z",
+                  "updatedAt": "2026-10-22T01:30:07.000Z",
+                  "uid": "35240-db63532b-0922-4525-aed4-7c648096c78c"
+                }
+              ],
+              "createdAt": "2026-10-22T01:30:07.000Z",
+              "updatedAt": "2026-10-22T01:30:07.000Z",
+              "uid": "35240-60ff9095-16fd-4b8e-8767-0078dc8e384a"
+            }
+          ],
+          "id": "ca02495f-218b-4d39-bc36-338bcffe8106",
+          "createdAt": "2026-10-22T01:30:07.000Z",
+          "updatedAt": "2026-10-22T01:30:07.000Z",
+          "uid": "35240-ca02495f-218b-4d39-bc36-338bcffe8106"
+        },
+        {
+          "name": "List organizations",
+          "id": "d458973b-c07b-4c15-9390-aeb5706e36d7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/organizations?limit=100&from=<string>&sortBy=updatedAt",
               "host": [
                 "{{baseUrl}}"
+              ],
+              "path": [
+                "organizations"
               ],
               "query": [
                 {
-                  "disabled": false,
+                  "description": "Number of items to return. Max/default is 100.",
                   "key": "limit",
-                  "value": "100",
-                  "description": "Number of items to return. Max/default is 100."
+                  "value": "100"
                 },
                 {
-                  "disabled": false,
+                  "description": "The cursor returned from a previous request (from the next property).",
                   "key": "from",
-                  "value": "<string>",
-                  "description": "The cursor returned from a previous request (from the next property)."
+                  "value": "<string>"
                 },
                 {
-                  "disabled": false,
+                  "description": "How to order results. Default updatedAt.",
                   "key": "sortBy",
-                  "value": "updatedAt",
-                  "description": "How to order results. Default updatedAt."
-                }
-              ],
-              "variable": [
-                {
-                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                  "type": "any",
-                  "value": "{{subdomain}}",
-                  "key": "subdomain"
+                  "value": "updatedAt"
                 }
               ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
+            }
           },
           "response": [
             {
-              "id": "04cb19ab-0b63-4455-96f3-4088fcdd3b6a",
+              "id": "f0994b44-e57a-4960-912c-8bc67b1323ef",
               "name": "A page of organizations",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
                 "url": {
-                  "path": [
-                    "organizations"
-                  ],
+                  "raw": "{{baseUrl}}/organizations?limit=100&from=<string>&sortBy=updatedAt",
                   "host": [
                     "{{baseUrl}}"
                   ],
+                  "path": [
+                    "organizations"
+                  ],
                   "query": [
                     {
+                      "description": "Number of items to return. Max/default is 100.",
                       "key": "limit",
                       "value": "100"
                     },
                     {
+                      "description": "The cursor returned from a previous request (from the next property).",
                       "key": "from",
                       "value": "<string>"
                     },
                     {
+                      "description": "How to order results. Default updatedAt.",
                       "key": "sortBy",
                       "value": "updatedAt"
                     }
-                  ],
-                  "variable": [
-                    {
-                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                      "type": "any",
-                      "value": "{{subdomain}}",
-                      "key": "subdomain"
-                    }
                   ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"next\": \"string\",\n  \"results\": [\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"1949-10-07T20:18:44.812Z\",\n      \"updatedAt\": \"1980-12-29T21:27:05.087Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": 2748\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"createdAt\": \"2006-08-18T02:37:27.410Z\",\n      \"updatedAt\": \"2014-08-31T06:50:37.194Z\",\n      \"externalId\": \"string\",\n      \"name\": \"string\",\n      \"traits\": {\n        \"key_0\": \"string\",\n        \"key_1\": 1348.6714233811038\n      }\n    }\n  ]\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"next\": \"<string,null>\",\n  \"results\": [\n    {\n      \"id\": \"<string>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"externalId\": \"<string,null>\",\n      \"name\": \"<string,null>\",\n      \"traits\": {\n        \"laborumd\": -78339536.40910809\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"createdAt\": \"<dateTime>\",\n      \"updatedAt\": \"<dateTime>\",\n      \"externalId\": \"<string,null>\",\n      \"name\": \"<string,null>\",\n      \"traits\": {\n        \"culpa_01d\": \"laborum sunt est consequat\"\n      }\n    }\n  ]\n}",
+              "createdAt": "2026-10-22T01:30:07.000Z",
+              "updatedAt": "2026-10-22T01:30:07.000Z",
+              "uid": "35240-f0994b44-e57a-4960-912c-8bc67b1323ef"
             },
             {
-              "id": "941d4860-e743-40de-ac3e-a8b3784a5009",
+              "id": "b64913e8-73cb-4ab6-ae4c-228c918b7279",
               "name": "Unauthorized - there is an issue with the authorization used",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
                 "url": {
-                  "path": [
-                    "organizations"
-                  ],
+                  "raw": "{{baseUrl}}/organizations?limit=100&from=<string>&sortBy=updatedAt",
                   "host": [
                     "{{baseUrl}}"
                   ],
+                  "path": [
+                    "organizations"
+                  ],
                   "query": [
                     {
+                      "description": "Number of items to return. Max/default is 100.",
                       "key": "limit",
                       "value": "100"
                     },
                     {
+                      "description": "The cursor returned from a previous request (from the next property).",
                       "key": "from",
                       "value": "<string>"
                     },
                     {
+                      "description": "How to order results. Default updatedAt.",
                       "key": "sortBy",
                       "value": "updatedAt"
                     }
-                  ],
-                  "variable": [
-                    {
-                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                      "type": "any",
-                      "value": "{{subdomain}}",
-                      "key": "subdomain"
-                    }
                   ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                }
               },
               "status": "Unauthorized",
               "code": 401,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:30:07.000Z",
+              "updatedAt": "2026-10-22T01:30:07.000Z",
+              "uid": "35240-b64913e8-73cb-4ab6-ae4c-228c918b7279"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "createdAt": "2026-10-22T01:30:07.000Z",
+          "updatedAt": "2026-10-22T01:30:07.000Z",
+          "uid": "35240-d458973b-c07b-4c15-9390-aeb5706e36d7"
         },
         {
-          "id": "078c1904-88e1-4c64-be58-c5c4d6489eef",
           "name": "Create an organization",
+          "id": "586a6317-f979-4bae-bdc8-747d6e362f74",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
-            "name": "Create an organization",
-            "description": {},
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"in_9\": 99483860.3289606,\n    \"sitbe\": -31626097.660537183\n  }\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
             "url": {
+              "raw": "{{baseUrl}}/organizations",
+              "host": [
+                "{{baseUrl}}"
+              ],
               "path": [
                 "organizations"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                  "type": "any",
-                  "value": "{{subdomain}}",
-                  "key": "subdomain"
-                }
               ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 6203.885440613685,\n    \"key_1\": \"string\"\n  }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
             }
           },
           "response": [
             {
-              "id": "58a20dab-9461-40b6-a0ab-7715ae5d78b8",
+              "id": "8b983936-24f4-45b6-a627-4b07e655bea6",
               "name": "The created organization",
               "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"in_9\": 99483860.3289606,\n    \"sitbe\": -31626097.660537183\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
                 "url": {
+                  "raw": "{{baseUrl}}/organizations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "organizations"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                      "type": "any",
-                      "value": "{{subdomain}}",
-                      "key": "subdomain"
-                    }
                   ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 9280.07947890786\n  },\n  \"key_0\": 8548\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
                 }
               },
               "status": "OK",
               "code": 200,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"id\": \"string\",\n  \"createdAt\": \"1969-09-22T20:41:10.468Z\",\n  \"updatedAt\": \"1974-04-16T15:58:36.163Z\",\n  \"externalId\": \"string\",\n  \"name\": \"string\",\n  \"traits\": {\n    \"key_0\": 4272.463567756586,\n    \"key_1\": 8886\n  },\n  \"key_0\": 9631.692105339447,\n  \"key_1\": false,\n  \"key_2\": 7574\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"id\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"updatedAt\": \"<dateTime>\",\n  \"externalId\": \"<string,null>\",\n  \"name\": \"<string,null>\",\n  \"traits\": {\n    \"Ut_7_e\": -15057883.497129068,\n    \"quif\": 10163910\n  }\n}",
+              "createdAt": "2026-10-22T01:30:07.000Z",
+              "updatedAt": "2026-10-22T01:30:07.000Z",
+              "uid": "35240-8b983936-24f4-45b6-a627-4b07e655bea6"
             },
             {
-              "id": "8dc41b1e-53ba-4b11-a68e-8c5c03a7cee3",
+              "id": "94091808-7b51-4533-9ea5-d3661345f68f",
               "name": "Unauthorized - there is an issue with the authorization used",
               "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"in_9\": 99483860.3289606,\n    \"sitbe\": -31626097.660537183\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
                 "url": {
+                  "raw": "{{baseUrl}}/organizations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "organizations"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                      "type": "any",
-                      "value": "{{subdomain}}",
-                      "key": "subdomain"
-                    }
                   ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 9280.07947890786\n  },\n  \"key_0\": 8548\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
                 }
               },
               "status": "Unauthorized",
               "code": 401,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ],
-              "body": "{\n  \"error\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"error\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T01:30:07.000Z",
+              "updatedAt": "2026-10-22T01:30:07.000Z",
+              "uid": "35240-94091808-7b51-4533-9ea5-d3661345f68f"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "498a78b4-2932-4966-9c8b-8ab0d6f44c77",
-          "name": "Get an organization",
-          "request": {
-            "name": "Get an organization",
-            "description": {},
-            "url": {
-              "path": [
-                "organizations",
-                ":organizationId"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "organizationId",
-                  "description": "(Required) "
-                },
-                {
-                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                  "type": "any",
-                  "value": "{{subdomain}}",
-                  "key": "subdomain"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "fb0975c9-70e0-45ba-954b-2f35777cf560",
-              "name": "The organization",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "organizations",
-                    ":organizationId"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "organizationId",
-                      "description": "(Required) "
-                    },
-                    {
-                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                      "type": "any",
-                      "value": "{{subdomain}}",
-                      "key": "subdomain"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"string\",\n  \"createdAt\": \"1969-09-22T20:41:10.468Z\",\n  \"updatedAt\": \"1974-04-16T15:58:36.163Z\",\n  \"externalId\": \"string\",\n  \"name\": \"string\",\n  \"traits\": {\n    \"key_0\": 4272.463567756586,\n    \"key_1\": 8886\n  },\n  \"key_0\": 9631.692105339447,\n  \"key_1\": false,\n  \"key_2\": 7574\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "f950868a-5099-4134-aba0-dbaf46d14f76",
-              "name": "Unauthorized - there is an issue with the authorization used",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "organizations",
-                    ":organizationId"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "organizationId",
-                      "description": "(Required) "
-                    },
-                    {
-                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                      "type": "any",
-                      "value": "{{subdomain}}",
-                      "key": "subdomain"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Unauthorized",
-              "code": 401,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"error\": \"string\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "3eb5be95-4643-4ebd-bdc7-af600f0a3b23",
-          "name": "Update an organization",
-          "request": {
-            "name": "Update an organization",
-            "description": {},
-            "url": {
-              "path": [
-                "organizations",
-                ":organizationId"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "organizationId",
-                  "description": "(Required) "
-                },
-                {
-                  "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                  "type": "any",
-                  "value": "{{subdomain}}",
-                  "key": "subdomain"
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "PUT",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 6203.885440613685,\n    \"key_1\": \"string\"\n  }\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "a52ad733-0780-4384-b4b9-487421a3d3eb",
-              "name": "The updated organization",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "organizations",
-                    ":organizationId"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "organizationId",
-                      "description": "(Required) "
-                    },
-                    {
-                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                      "type": "any",
-                      "value": "{{subdomain}}",
-                      "key": "subdomain"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "PUT",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 9280.07947890786\n  },\n  \"key_0\": 8548\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"id\": \"string\",\n  \"createdAt\": \"1969-09-22T20:41:10.468Z\",\n  \"updatedAt\": \"1974-04-16T15:58:36.163Z\",\n  \"externalId\": \"string\",\n  \"name\": \"string\",\n  \"traits\": {\n    \"key_0\": 4272.463567756586,\n    \"key_1\": 8886\n  },\n  \"key_0\": 9631.692105339447,\n  \"key_1\": false,\n  \"key_2\": 7574\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            },
-            {
-              "id": "2bb06ff1-92d9-4db4-8733-7cf5420b2261",
-              "name": "Unauthorized - there is an issue with the authorization used",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "organizations",
-                    ":organizationId"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "organizationId",
-                      "description": "(Required) "
-                    },
-                    {
-                      "description": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-                      "type": "any",
-                      "value": "{{subdomain}}",
-                      "key": "subdomain"
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "PUT",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"externalId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"accountId\": \"<string>\",\n  \"organizationId\": \"<string>\",\n  \"traits\": {\n    \"key_0\": 9280.07947890786\n  },\n  \"key_0\": 8548\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Unauthorized",
-              "code": 401,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"error\": \"string\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "createdAt": "2026-10-22T01:30:07.000Z",
+          "updatedAt": "2026-10-22T01:30:07.000Z",
+          "uid": "35240-586a6317-f979-4bae-bdc8-747d6e362f74"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "description": {
-        "content": "Your Vitally subdomain (from your login URL yoursubdomain.vitally.io)",
-        "type": "text/plain"
-      },
-      "type": "any",
-      "value": "yoursubdomain",
-      "key": "subdomain"
-    },
-    {
-      "type": "string",
-      "value": "https://{{subdomain}}.rest.vitally.io/resources",
-      "key": "baseUrl"
+      "id": "845d5854-604a-44d1-ab1c-456cb42e3e52",
+      "createdAt": "2026-10-22T01:30:07.000Z",
+      "updatedAt": "2026-10-22T01:30:07.000Z",
+      "uid": "35240-845d5854-604a-44d1-ab1c-456cb42e3e52"
     }
   ],
   "auth": {
@@ -741,21 +667,24 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "e1102551-f203-4bbb-8853-d0262246f276",
-    "name": "Vitally REST Accounts Organizations API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "Vitally's public REST API for creating, updating, retrieving and listing the core Customer Success objects — Accounts, Organizations, Users, Tasks, Notes, Conversations and NPS Responses. Authentication is HTTP Basic using a Vitally REST API key as the username. List endpoints use cursor-based pagination ordered by updatedAt (default) or createdAt.\n\nContact Support:\n Name: Vitally",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "subdomain",
+      "value": "yoursubdomain"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{subdomain}}.rest.vitally.io/resources"
     }
-  }
+  ]
 }
